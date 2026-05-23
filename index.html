@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNSAID — Sunday Sach Edition · 24 May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d0d0d;--paper:#f4efe3;--saffron:#FF6B00;--green:#138808;--yellow:#FFC300;--cream:#fdf8ee;--muted:#7a6e60;--rule:#c4b89a;--white:#fff}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Space Mono',monospace;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+.ticker{background:var(--saffron);color:var(--white);font-size:10px;letter-spacing:0.1em;overflow:hidden;white-space:nowrap;padding:5px 0;border-bottom:2px solid var(--ink)}
+.ticker-inner{display:inline-block;animation:tick 65s linear infinite}
+.ticker-inner span{margin:0 36px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.flag-stripe{height:5px;background:linear-gradient(to right,#FF9933 33.33%,#fff 33.33% 66.66%,#138808 66.66%)}
+header{border-bottom:4px double var(--rule);padding:20px 36px 14px;display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:8px}
+.h-left,.h-right{font-size:9.5px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;line-height:2}
+.h-right{text-align:right}
+.masthead-center{text-align:center}
+.masthead-center h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,7.5vw,100px);line-height:0.88;letter-spacing:1px}
+.masthead-center h1 span{color:var(--saffron)}
+.hindi-sub{font-family:'Tiro Devanagari Hindi',serif;font-size:13px;color:var(--muted);margin-top:4px;letter-spacing:0.05em}
+.tagline{font-family:'DM Serif Display',serif;font-style:italic;font-size:11px;color:var(--muted);margin-top:2px}
+.edition-pill{display:inline-block;background:var(--ink);color:var(--yellow);font-size:8px;font-weight:700;letter-spacing:0.2em;padding:2px 10px;text-transform:uppercase;margin-bottom:6px}
+nav{border-bottom:2px solid var(--rule);padding:7px 36px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:4px 14px;border-right:1px solid var(--rule);white-space:nowrap;transition:all 0.15s}
+nav a:first-child{border-left:1px solid var(--rule)}
+nav a:hover,nav a.active{background:var(--ink);color:var(--yellow)}
+main{max-width:1300px;margin:0 auto;padding:22px 36px 60px}
+.section-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);border-top:3px solid var(--ink);padding-top:5px;margin-bottom:18px}
+.tag{display:inline-block;font-size:8.5px;font-weight:700;letter-spacing:0.18em;padding:2px 9px;text-transform:uppercase;margin-bottom:9px}
+.tag-black{background:var(--ink);color:var(--yellow)}
+.tag-saffron{background:var(--saffron);color:white}
+.tag-green{background:var(--green);color:white}
+.hero-wrap{display:grid;grid-template-columns:1.9fr 1fr;gap:0;border-bottom:2px solid var(--rule);padding-bottom:26px;margin-bottom:28px}
+.hero-main{border-right:2px solid var(--rule);padding-right:28px}
+.hero-side{padding-left:26px;display:flex;flex-direction:column;gap:22px}
+.hero-hl{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4.2vw,64px);line-height:0.92;margin-bottom:10px}
+.hero-deck{font-family:'DM Serif Display',serif;font-style:italic;font-size:15px;line-height:1.45;border-left:3px solid var(--saffron);padding-left:12px;margin-bottom:14px;color:#2a2420}
+.body-text{font-size:11.5px;line-height:1.85;color:#2e2820}
+.body-text p{margin-bottom:10px}
+.hl{background:var(--yellow);padding:0 3px;font-weight:700}
+.article-meta{display:flex;gap:12px;font-size:9px;color:var(--muted);letter-spacing:0.09em;text-transform:uppercase;margin-top:14px;align-items:center;flex-wrap:wrap}
+.dot{color:var(--rule)}
+.villain-box{background:var(--ink);border:3px solid var(--yellow);padding:24px 28px;margin:20px 0;position:relative}
+.villain-label{font-family:'Bebas Neue',sans-serif;font-size:11px;color:var(--saffron);letter-spacing:0.3em;margin-bottom:8px}
+.villain-hl{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,3.5vw,46px);color:var(--yellow);line-height:0.95;margin-bottom:12px}
+.villain-body{font-size:11px;line-height:1.8;color:#c4b89a}
+.villain-citation{border-top:1px dashed #444;margin-top:16px;padding-top:14px;font-family:'DM Serif Display',serif;font-style:italic;font-size:13px;color:var(--yellow);line-height:1.6}
+.trophy-icon{position:absolute;top:20px;right:24px;font-size:48px;opacity:0.2}
+.ringlight-visual{background:#111;border:2px solid #333;padding:20px;text-align:center;margin:16px 0}
+.ring-outer{width:90px;height:90px;border-radius:50%;border:10px solid var(--yellow);box-shadow:0 0 0 5px #222,0 0 0 10px var(--saffron),0 0 40px rgba(255,195,0,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:24px}
+.rl-caption{font-size:9px;color:#666;letter-spacing:0.15em;font-family:'Space Mono',monospace}
+.confession-section{background:#fdf8ee;border:2px solid var(--rule);padding:22px 26px;margin-bottom:28px}
+.confession-header{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--ink);letter-spacing:1px;border-bottom:2px solid var(--rule);padding-bottom:10px;margin-bottom:18px}
+.confession-header span{color:var(--saffron)}
+.confession-sub{font-size:9px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-top:4px;font-family:'Space Mono',monospace}
+.confession-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.confession-card{border-left:3px solid var(--saffron);padding:16px 16px 16px 28px;background:white;font-family:'DM Serif Display',serif;font-style:italic;font-size:13px;line-height:1.65;color:#2e2820;position:relative}
+.confession-card::before{content:'"';font-size:52px;color:#f0e8d0;position:absolute;top:-2px;left:8px;font-style:normal;line-height:1;font-family:'DM Serif Display',serif}
+.index-section{margin-bottom:28px;border:2px solid var(--ink);overflow:hidden}
+.index-header{background:var(--ink);color:var(--yellow);padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
+.index-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px}
+.index-sub{font-size:8px;color:#888;letter-spacing:0.1em;margin-top:2px}
+.index-table{width:100%;border-collapse:collapse;font-size:10.5px}
+.index-table th{background:#f0e8d8;padding:8px 14px;text-align:left;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule)}
+.index-table td{padding:9px 14px;border-bottom:1px solid #e8e0d0;vertical-align:middle;line-height:1.4}
+.index-table tr:last-child td{border-bottom:none}
+.index-table tr:nth-child(even) td{background:#faf6ed}
+.metric-name{font-weight:700}
+.metric-value{font-family:'Bebas Neue',sans-serif;font-size:16px}
+.change-up{color:#c33}
+.change-dn{color:#138808}
+.change-flat{color:var(--muted)}
+.analyst-note{font-size:9.5px;color:#5a4e42;font-style:italic}
+.index-summary{padding:14px 20px;background:#f0e8d8;border-top:1px solid var(--rule);font-size:10.5px;line-height:1.8;color:#3a3028}
+.side-card{border-top:2px solid var(--rule);padding-top:14px}
+.side-hl{font-family:'DM Serif Display',serif;font-size:17px;line-height:1.22;margin-bottom:8px}
+.side-body{font-size:10.5px;line-height:1.72;color:#3e3428}
+.pull{border-left:5px solid var(--saffron);border-right:5px solid var(--saffron);padding:18px 24px;margin:26px 0;text-align:center}
+.pull blockquote{font-family:'DM Serif Display',serif;font-style:italic;font-size:24px;line-height:1.35}
+.pull cite{font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);display:block;margin-top:8px;font-style:normal}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;border-bottom:2px solid var(--rule);padding-bottom:28px;margin-bottom:28px}
+.col-card{border-top:2px solid var(--ink);padding-top:11px}
+.col-hl{font-family:'DM Serif Display',serif;font-size:19px;line-height:1.22;margin-bottom:8px}
+.col-body{font-size:10.5px;line-height:1.75;color:#342e28}
+.slow-read{background:var(--cream);border:2px solid var(--rule);padding:32px 36px;margin-bottom:28px}
+.slow-read-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--saffron);margin-bottom:12px}
+.slow-read-hl{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.8vw,34px);line-height:1.18;margin-bottom:18px;max-width:820px}
+.slow-body{font-family:'DM Serif Display',serif;font-size:14px;line-height:1.9;color:#2e2820;max-width:820px;columns:2;column-gap:36px}
+.slow-body p{margin-bottom:14px;break-inside:avoid}
+.slow-callout{background:var(--ink);color:var(--yellow);padding:16px 20px;margin:20px 0;font-family:'DM Serif Display',serif;font-style:italic;font-size:16px;line-height:1.55;break-inside:avoid}
+.slow-hindi{font-family:'Tiro Devanagari Hindi',serif;font-size:16px;color:var(--saffron);font-style:italic}
+.opinion{background:var(--ink);color:var(--paper);padding:22px 26px;margin-bottom:28px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
+.op-label{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--saffron);writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:2px;line-height:1}
+.op-hl{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,3vw,38px);line-height:0.95;color:var(--yellow);margin-bottom:10px}
+.op-body{font-size:11.5px;line-height:1.82;color:#c4b89a}
+.op-author{font-size:8.5px;color:#888;letter-spacing:0.12em;text-transform:uppercase;margin-top:10px}
+.viral{border:2px solid var(--rule);margin-bottom:28px;overflow:hidden}
+.viral-title{background:var(--ink);color:var(--yellow);padding:10px 18px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;display:flex;justify-content:space-between;align-items:center}
+.viral-title span{font-size:8.5px;font-family:'Space Mono',monospace;color:#888;letter-spacing:0.1em}
+.v-item{display:grid;grid-template-columns:34px 1fr 180px;gap:0;border-bottom:1px solid var(--rule);padding:14px 18px;align-items:start}
+.v-item:last-child{border-bottom:none}
+.v-rank{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--saffron);line-height:1;padding-top:2px}
+.v-text{font-size:10.5px;line-height:1.68;padding:0 16px;color:#2e2820}
+.v-text strong{display:block;font-family:'DM Serif Display',serif;font-size:14px;margin-bottom:4px;font-weight:normal}
+.v-meter{font-size:9px;color:var(--muted);text-align:right;padding-left:12px}
+.bar{height:4px;background:#ddd;margin:6px 0;border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;background:var(--saffron);transition:width 1.2s ease}
+footer{border-top:4px double var(--rule);padding:20px 36px;display:flex;justify-content:space-between;align-items:center;font-size:9.5px;color:var(--muted);letter-spacing:0.1em}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--ink)}
+.footer-brand span{color:var(--saffron)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-wrap{animation:fadeUp 0.5s ease both 0.1s}
+.three-col{animation:fadeUp 0.5s ease both 0.2s}
+.opinion{animation:fadeUp 0.5s ease both 0.25s}
+.viral{animation:fadeUp 0.5s ease both 0.3s}
+.confession-section{animation:fadeUp 0.5s ease both 0.35s}
+.slow-read{animation:fadeUp 0.5s ease both 0.4s}
+@media(max-width:800px){
+  header{grid-template-columns:1fr;text-align:center;padding:14px 18px 10px}
+  .h-left,.h-right{display:none}
+  main{padding:14px 16px 40px}
+  nav{padding:7px 16px}
+  .hero-wrap{grid-template-columns:1fr}
+  .hero-main{border-right:none;padding-right:0;border-bottom:2px solid var(--rule);padding-bottom:18px;margin-bottom:18px}
+  .hero-side{padding-left:0}
+  .three-col{grid-template-columns:1fr}
+  .opinion{grid-template-columns:1fr}
+  .op-label{writing-mode:horizontal-tb;transform:none;font-size:22px}
+  .confession-grid{grid-template-columns:1fr}
+  .slow-body{columns:1}
+  .v-item{grid-template-columns:30px 1fr}
+  .v-meter{display:none}
+  footer{flex-direction:column;gap:6px;text-align:center;padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="flag-stripe"></div>
+<div class="ticker"><div class="ticker-inner" id="tickerInner"></div></div>
+
+<header>
+  <div class="h-left">
+    <div class="edition-pill">☀️ Sunday Sach Edition 🇮🇳</div>
+    <div>Sunday, 24 May 2026</div>
+    <div>Vol. I · Issue No. 025</div>
+    <div>Price: One Honest Feeling</div>
+  </div>
+  <div class="masthead-center">
+    <h1>UN<span>SAID</span></h1>
+    <div class="hindi-sub">जो कहा नहीं गया, वो हम कहेंगे</div>
+    <div class="tagline">"Roz ki khabar toh sab dete hain. Aaj woh bolenge jo koi nahi bolta."</div>
+  </div>
+  <div class="h-right">
+    <div>Est. 2024</div>
+    <div>Readership: Chronically Online Bharatiyas</div>
+    <div>Bias: Uncomfortably Accurate</div>
+    <div>Coverage: Jugaad Journalism™</div>
+  </div>
+</header>
+
+<nav>
+  <a href="#" class="active">Front Page</a>
+  <a href="#">Aaj Ka Villain</a>
+  <a href="#">Confessions</a>
+  <a href="#">The Index</a>
+  <a href="#">Slow Read</a>
+  <a href="#">Rashifal</a>
+</nav>
+
+<main>
+  <div class="section-label">Sunday Sach — 24 May 2026 · The Things Nobody Is Saying Out Loud</div>
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <div class="hero-main">
+      <span class="tag tag-black">🏆 AAJ KA VILLAIN AWARD — WEEKLY HONOURS CEREMONY</span>
+      <h2 class="hero-hl">THIS WEEK'S VILLAIN IS NOT A PERSON.<br>IT IS AN IDEA. THE IDEA IS "JUST BE CONSISTENT."</h2>
+      <p class="hero-deck">Somewhere in India right now, a person with a ring light and seven motivational courses they haven't completed is recording a 47-second video. It will get 2.3 million views. It will say "bas consistent raho." It will help nobody.</p>
+      <div class="body-text">
+        <p>"Just be consistent" is the most confidently delivered piece of advice in human history that has never once explained anything. It is the nutritional label on a packet that says "contains food." It is the terms and conditions of wisdom — technically present, functionally useless, skipped by everyone.</p>
+        <p><strong>Consistent at what, exactly?</strong> At waking up at 5 AM? At posting content? At journaling, cold showers, 40 pages a day, 3 litres of water, meditating, exercising, networking authentically, and building in public — <strong class="hl">all before 9 AM</strong>, before the job you need to afford the ring light?</p>
+        <p>The person giving you this advice wakes up at 5 AM because their job <em>is</em> waking up at 5 AM and telling you to wake up at 5 AM. They found a loop and they are living inside it and <strong class="hl">charging ₹4,999 for the masterclass.</strong></p>
+        <p>India produces approximately 500 new consistency gurus per week. Each discovered the secret to success between ages 22 and 26, during a period when they had no rent, no dependents, and parents who asked zero financial questions. Each has a before photo where they look tired, and an after photo where they look tired but in better lighting. <strong class="hl">The sacrifice is real. The lighting is also very good.</strong></p>
+      </div>
+
+      <!-- Ring Light Infographic -->
+      <div class="ringlight-visual">
+        <div style="font-family:'Space Mono',monospace;font-size:8px;color:#888;letter-spacing:0.2em;margin-bottom:14px;">📸 UNSAID ILLUSTRATION — CONSISTENCY CONTENT DESK</div>
+        <div class="ring-outer">💡</div>
+        <div style="color:var(--yellow);font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;margin-bottom:8px;">2.3M VIEWS · ZERO DEFINITIONS · ₹4,999 MASTERCLASS</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:420px;margin:10px auto;font-size:9px;font-family:'Space Mono',monospace">
+          <div style="border:1px solid #333;padding:8px;color:#aaa;">📹 Video length<br><span style="color:var(--yellow);font-family:'Bebas Neue',sans-serif;font-size:18px">47 SEC</span></div>
+          <div style="border:1px solid #333;padding:8px;color:#aaa;">💡 Explanations<br><span style="color:var(--yellow);font-family:'Bebas Neue',sans-serif;font-size:18px">ZERO</span></div>
+          <div style="border:1px solid #333;padding:8px;color:#aaa;">🎓 Courses done<br><span style="color:var(--yellow);font-family:'Bebas Neue',sans-serif;font-size:18px">0 / 7</span></div>
+        </div>
+        <div class="rl-caption">Person posting this advice: also inconsistent. But ring light: excellent.</div>
+      </div>
+
+      <div class="villain-box">
+        <div class="trophy-icon">🏆</div>
+        <div class="villain-label">🏆 AAJ KA VILLAIN AWARD — OFFICIAL CITATION READS:</div>
+        <div class="villain-hl">THE CONCEPT OF<br>"JUST BE CONSISTENT"</div>
+        <div class="villain-body">Meanwhile, the actual consistent people in India — the ones waking at 5:47 because the train leaves at 5:47 and the commute is two hours and the office doesn't care — are not making content about it. They are tired. They are on the train. They are watching the consistency reel on their phone and feeling, in some quiet corner of themselves, that they are doing something wrong. <strong style="color:var(--yellow)">They are not doing anything wrong. They are doing everything. They are just not filming it.</strong></div>
+        <div class="villain-citation">
+          "For making the hardest thing sound like a reminder notification. For turning three years of quiet suffering into a four-word caption. For being technically correct and emotionally useless simultaneously. For making an entire generation feel like they're failing at something that was never properly explained to them in the first place."
+          <br><br>
+          <span style="font-size:11px;font-style:normal;color:#888;font-family:'Space Mono',monospace;letter-spacing:0.1em">The award is a trophy shaped like a ring light. Nobody is collecting it. The person who should collect it is currently posting about not needing external validation.</span>
+        </div>
+      </div>
+
+      <div class="article-meta">
+        <span>UNSAID: Consistency Award. Given To A Concept. No Acceptance Speech Available.</span>
+        <span class="dot">·</span>
+        <span>UNSAID Editorial Desk</span>
+        <span class="dot">·</span>
+        <span>7 min read · 🔥 Trending Nationally</span>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="side-card">
+        <span class="tag tag-saffron">🚆 THE REAL CONSISTENT PEOPLE</span>
+        <h3 class="side-hl">They've Been at 5 AM Since Before It Was Content. They're on the Train. They're Not Filming It.</h3>
+        <p class="side-body">The actual consistent people in India — waking at 5:47 because the train leaves at 5:47, commute two hours, office doesn't care — are not making content about it. They are tired. They are on the train. They are watching the consistency reel on their phone and feeling they are doing something wrong.<br><br>They are not doing anything wrong. They are doing everything. They are just not filming it.</p>
+        <div class="article-meta" style="margin-top:8px;">UNSAID: Real Consistency. Zero Ring Light. Most Deserving. · @unsaid</div>
+      </div>
+      <div class="side-card">
+        <span class="tag tag-black">🎓 THE TOPPER PROBLEM</span>
+        <h3 class="side-hl">Topper Studied 14 Hours a Day for 3 Years. Secret? "Consistency." Four Words. Explains Nothing.</h3>
+        <p class="side-body">"Consistency is key," said a topper, asked for their secret. They studied 14 hours a day for three years, gave up weekends, birthdays, relationships, and the entire experience of being 21 in a city happening without them. They emerged with a rank, a job, and advice that fits in four words and explains none of that.<br><br>Four words a person with a ring light turns into a reel. The reel will get 2.3 million views. The topper will be on the train.</p>
+        <div class="article-meta" style="margin-top:8px;">UNSAID: Four Words. Three Years Compressed Into Them. · @unsaid</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <blockquote>"The people who tell you the secret to success in four words spent years doing things they couldn't fit in four words."</blockquote>
+    <cite>— UNSAID Editorial Desk · Sunday, 24 May 2026 · Accuracy: Uncomfortably High</cite>
+  </div>
+
+  <!-- CONFESSIONS -->
+  <div class="section-label">🤫 Unsaid Confessions — This Week, You Spoke. We Listened. Nobody Was Ready.</div>
+  <div class="confession-section">
+    <div class="confession-header">
+      UN<span>SAID</span> CONFESSIONS
+      <div class="confession-sub">Every Sunday, readers submit what they've never said out loud. No names. No context. Just the thing.</div>
+    </div>
+    <div class="confession-grid">
+      <div class="confession-card">I have told my parents I am 'working on a startup' for 14 months. The startup is a Notion page with three bullet points and a name I haven't decided yet.</div>
+      <div class="confession-card">My entire personality for the last two years has been built around a TV show I haven't actually finished watching. I'm on episode 4. I have recommended it to 23 people.</div>
+      <div class="confession-card">I genuinely do not know what I want to do with my life and I'm terrified that the people who seem like they do — also don't. And that we're all just performing certainty at each other and calling it ambition.</div>
+      <div class="confession-card">I cried in a Zomato delivery guy's general direction last Tuesday. He had no idea. He was just handing me biryani. The biryani was good. I was not okay. The two things were unrelated. I think.</div>
+      <div class="confession-card">I told my whole friend group I deleted Instagram for my mental health. I made a second account the same evening. It only follows plants and architecture. I am not okay but the plants are beautiful.</div>
+      <div class="confession-card">I laughed at a LinkedIn post about 'failing forward' and spent 45 minutes writing my own. I got 340 reactions. I felt nothing. This is who I am now.</div>
+      <div class="confession-card">I'm 24 and I still don't know if I'm an introvert or just tired. The tests keep saying INFJ. I don't know what that means. I've read four articles about it. I'm still tired.</div>
+      <div class="confession-card">I have told myself 'main apni life seriously lunga' on the first of every month since January 2024. It is now May 2026. Seventeen times. On the 18th, I will mean it. Probably.</div>
+    </div>
+    <div style="text-align:center;margin-top:18px;font-size:9px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase">Submit yours: unsaid.wtf/confessions · All confessions anonymous · All confessions disturbingly relatable</div>
+  </div>
+
+  <!-- SHARMA JI KA BETA INDEX -->
+  <div class="section-label">📊 The Sharma Ji Ka Beta Weekly Index — India's Most Honest Data. Completely Made Up. Disturbingly Accurate.</div>
+  <div class="index-section">
+    <div class="index-header">
+      <div>
+        <div class="index-title">📊 SHARMA JI KA BETA WEEKLY INDEX</div>
+        <div class="index-sub">Week ending: Sunday, 24 May 2026 · All data fabricated · All data accurate · Next publish: 1 June 2026</div>
+      </div>
+      <div style="font-size:28px;opacity:0.3">📉</div>
+    </div>
+    <table class="index-table">
+      <thead>
+        <tr><th>Metric</th><th>This Week</th><th>Change</th><th>Analyst Note</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="metric-name">National Overthinking Index</span></td><td><span class="metric-value">847 pts</span></td><td><span class="change-up">📈 +34%</span></td><td class="analyst-note">Friday night alone: 61% of total volume</td></tr>
+        <tr><td><span class="metric-name">Situationship Clarity Score</span></td><td><span class="metric-value">2.1 / 10</span></td><td><span class="change-up">📉 All-time low</span></td><td class="analyst-note">"We're just talking" entered week 47</td></tr>
+        <tr><td><span class="metric-name">Passion-Following vs Bill-Paying Ratio</span></td><td><span class="metric-value">0.3 : 1</span></td><td><span class="change-flat">➡️ Unchanged</span></td><td class="analyst-note">Ratio has not moved since 2019</td></tr>
+        <tr><td><span class="metric-name">Sharma Ji Ka Beta Sightings</span></td><td><span class="metric-value">4,200</span></td><td><span class="change-up">📈 +12%</span></td><td class="analyst-note">Peak hours: family lunch, 1–3 PM Sunday</td></tr>
+        <tr><td><span class="metric-name">LinkedIn Authenticity Index</span></td><td><span class="metric-value">0.04%</span></td><td><span class="change-up">📉 Record low</span></td><td class="analyst-note">AI authorship suspected in 94% of posts</td></tr>
+        <tr><td><span class="metric-name">"Kal Se Pakka" Conversion Rate</span></td><td><span class="metric-value">1.7%</span></td><td><span class="change-up">📉 Seasonal dip</span></td><td class="analyst-note">Exam season. Kal never came.</td></tr>
+        <tr><td><span class="metric-name">Main Character Moments (National)</span></td><td><span class="metric-value">2.1M</span></td><td><span class="change-up">📈 +19%</span></td><td class="analyst-note">94% occurred commuting alone with earphones</td></tr>
+        <tr><td><span class="metric-name">"I'm Fine" Accuracy Rate</span></td><td><span class="metric-value">11%</span></td><td><span class="change-up">📉 Down from 14%</span></td><td class="analyst-note">Margin of error: ±everything</td></tr>
+        <tr><td><span class="metric-name">Startup Ideas Had in Shower</span></td><td><span class="metric-value">1.7M</span></td><td><span class="change-up">📈 +22%</span></td><td class="analyst-note">0.3% written down. 0.001% still alive.</td></tr>
+        <tr><td><span class="metric-name">"Bas Ek Aur Reel" Said Before Bed</span></td><td><span class="metric-value">340M</span></td><td><span class="change-flat">➡️ Stable</span></td><td class="analyst-note">Considered a national constant. Like gravity.</td></tr>
+        <tr><td><span class="metric-name">Unsolicited Career Advice Received</span></td><td><span class="metric-value">3.4 / person</span></td><td><span class="change-up">📈 +8%</span></td><td class="analyst-note">Sunday family lunch effect: confirmed</td></tr>
+        <tr><td><span class="metric-name">Screen Time vs "I Use Phone Less" Claims</span></td><td><span class="metric-value">8.4 hrs vs 1.2M</span></td><td><span class="change-up">📊 Gap widening</span></td><td class="analyst-note">Researchers call it "the digital delusion index"</td></tr>
+      </tbody>
+    </table>
+    <div class="index-summary"><strong>Index Summary — Week 21, 2026:</strong> The National Overthinking Index reached its highest point since last Sunday. The Situationship Clarity Score has been in freefall for eleven consecutive weeks — analysts: "a record"; people living it: "yaar bus mat pooch." The "Kal Se Pakka" Conversion Rate remains in seasonal decline, expected to recover briefly on June 1st before declining again by June 3rd. The "I'm Fine" Accuracy Rate of 11% is, paradoxically, the most honest number in this entire report. <em>Next index: Sunday, 1 June 2026. Predictions: identical.</em></div>
+  </div>
+
+  <!-- THREE COL -->
+  <div class="section-label">Further Sach — Three Things Nobody Said Aloud This Week</div>
+  <div class="three-col">
+    <div class="col-card">
+      <span class="tag tag-black">🏃 THE SUCCESS UPGRADE</span>
+      <h3 class="col-hl">Sharma Ji Ka Beta Got the Rank. Got the Job. Is Now 26, Wondering if This Is It. Wonders Privately.</h3>
+      <p class="col-body">He did everything right and still wakes up some mornings feeling like he missed something. He doesn't tell anyone because the story ended at the rank and there's no template for what comes after. The pressure doesn't end when you succeed. It just upgrades. The benchmark is a person who is also uncertain — he just doesn't say it because the narrative ended at the achievement and there's no reel for what follows that.</p>
+      <div class="article-meta" style="margin-top:10px;">UNSAID: Success Unlocked. The Uncertainty Also Unlocked. · @unsaid</div>
+    </div>
+    <div class="col-card">
+      <span class="tag tag-saffron">🎭 THE PERFORMANCE</span>
+      <h3 class="col-hl">Everyone Is Performing Certainty. Everyone Is Watching Everyone Else Perform Certainty. Nobody Bought Tickets.</h3>
+      <p class="col-body">The performance looks like: confidence, forward motion, a clear answer to "so what are you doing these days?" — delivered smoothly at family functions by people who rehearsed it on the rickshaw over and have not thought past the next sentence. Because everyone performs it so well, everyone assumes they are the only one who is actually uncertain. They are not the only one. They are, statistically, the majority.</p>
+      <div class="article-meta" style="margin-top:10px;">UNSAID: Show Running. Nobody Booked It. Everyone In It. · @unsaid</div>
+    </div>
+    <div class="col-card">
+      <span class="tag tag-green">🌐 THE VISIBILITY TRAP</span>
+      <h3 class="col-hl">Every Generation Before Yours Could Fail Privately. That Distance Is Gone. Everything Is Visible Now.</h3>
+      <p class="col-body">Your cousin in Nagpur didn't know you were struggling in Pune. The distance between cities was also a distance between eyes. That's gone. Everything is visible. Everyone is watching. So everyone performs — not out of dishonesty, but out of the very human need to not be the only one falling apart in public. Result: a generation lonelier than it looks. More anxious than it posts. More exhausted than the aesthetic suggests.</p>
+      <div class="article-meta" style="margin-top:10px;">UNSAID: Visibility: High. Clarity: Low. Aesthetic: Holding Together. · @unsaid</div>
+    </div>
+  </div>
+
+  <!-- SUNDAY SLOW READ -->
+  <div class="section-label">☕ Sunday Slow Read — The One Piece With No Jokes. Just The Thing Nobody Is Saying.</div>
+  <div class="slow-read">
+    <div class="slow-read-label">☕ SUNDAY SLOW READ · 24 May 2026</div>
+    <h2 class="slow-read-hl">"Everyone Looks Like They Know What They're Doing. Nobody Knows What They're Doing. We Have Agreed Not To Discuss This."</h2>
+    <div class="slow-body">
+      <p>There is a performance happening in India right now and everyone is in it and nobody bought a ticket and the show has no ending. The performance looks like: confidence. Forward motion. A clear answer to "so what are you doing these days?" Delivered smoothly, at family functions and college reunions and chai breaks, by people who rehearsed it on the rickshaw ride over and have not thought past the next sentence.</p>
+      <p>Everyone is performing certainty. Everyone is watching everyone else perform certainty. And because everyone is performing it so well, everyone assumes they are the only one who is actually uncertain — the only one who doesn't have a plan, who changes their mind every three weeks, who feels, in some quiet 2 AM moment, genuinely lost.</p>
+      <div class="slow-callout">You are not the only one. You are, statistically, the majority.</div>
+      <p>The myth of the person who has it figured out is India's most successful export that never left the country. It lives in every family WhatsApp group, every LinkedIn feed, every cousin's wedding where someone asks what you're doing and you have to give an answer that fits in one sentence and sounds like a plan even if it is currently a prayer.</p>
+      <p>Sharma Ji Ka Beta does not actually exist. Or rather: he exists, but he is also lost. He got the rank. He got the job. He is sitting in an office right now, 26 years old, wondering if this is it — he just doesn't tell anyone because the story ended at the rank and there's no template for what comes after. The pressure doesn't end when you succeed. It just upgrades.</p>
+      <p>The generation currently between 20 and 30 in India is the first one to grow up watching the whole world perform its best version of itself in real time, 24 hours a day, on a device in their pocket. Every generation before this one could fail privately. That distance is gone now. Everything is visible. Everyone is watching. And so everyone is performing.</p>
+      <div class="slow-callout">So here is the thing UNSAID wants to say on this Sunday, plainly, without a punchline: You do not need to have it figured out. Not at 22, not at 25, not at 28.</div>
+      <p>The people who look like they do — mostly don't. The timeline you think you're behind on was made up by people who were also making it up as they went. The certainty you see in others is, in almost every case, a performance they practiced on the way over.</p>
+      <p>You are not behind. You are not failing. You are in the middle of something that doesn't have a name yet, doing the best you can with what you know right now — which is exactly what everyone else is doing, even the ones who seem like they aren't. The only difference between them and you is that they've gotten better at the performance. That is not a compliment to them. It is permission for you — to stop.</p>
+      <p>To say <span class="slow-hindi">main nahi jaanta</span> without it feeling like a confession. To say "I'm figuring it out" without the shame. To be 24 and uncertain and still completely, legitimately, in the right place. The show doesn't require your certainty. It only requires your presence.</p>
+    </div>
+  </div>
+
+  <!-- OPINION -->
+  <div class="opinion">
+    <div class="op-label">OPINION</div>
+    <div>
+      <div class="op-hl">SUNDAY SACH CONFIRMED: INDIA RUNS ON PERFORMANCES OF CERTAINTY, RING LIGHTS, AND THE QUIET EXHAUSTION OF ACTUALLY DOING THE WORK.</div>
+      <p class="op-body">Sunday's India ran on: gurus who discovered the secret to success during a period of zero financial responsibility, an entire generation watching each other perform confidence at close range on small screens, and the relentless production of four-word life advice by people who took four years to earn it. The "I'm Fine" Accuracy Rate dropped again. The Situationship Clarity Score has not moved since November. Sharma Ji Ka Beta is doing fine, publicly, and wondering what this is, privately — same as everyone else. Somewhere, a person is recording a 47-second video about consistency. The video will help nobody. The ring light will shine on. Monday is coming. Intentions will reset. Someone will genuinely mean it this time. Probably. The chai will help. It always does.</p>
+      <div class="op-author">— UNSAID Editorial Desk · Sunday Sach Edition · Vol. I · Issue No. 025 · 24 May 2026 · Opinions expressed are the ones nobody put in a WhatsApp forward</div>
+    </div>
+  </div>
+
+  <!-- VIRAL RATIO -->
+  <div class="viral">
+    <div class="viral-title">
+      SUNDAY RATIO REPORT — WEEK 21, 2026
+      <span>Updated: every time someone says "consistent raho" without defining it</span>
+    </div>
+    <div class="v-item">
+      <div class="v-rank">1</div>
+      <div class="v-text">
+        <strong>💡 Consistency Guru Posts 47-Second Reel. 2.3M Views. Zero Definitions. ₹4,999 Masterclass Now Open.</strong>
+        The reel contained the words "bas consistent raho" three times, a sunrise B-roll, and motivational background music. It did not define consistent. It did not specify at what. It did not account for rent, dependents, or the emotional experience of being a person. It got 2.3 million views. The comment section said "so true bro." The masterclass sold out in 72 hours. The people who bought it were hoping it would explain. It did not explain.
+      </div>
+      <div class="v-meter">2.3M views<div class="bar"><div class="bar-fill" style="width:0" data-w="100%"></div></div>ratio: technically correct</div>
+    </div>
+    <div class="v-item">
+      <div class="v-rank">2</div>
+      <div class="v-text">
+        <strong>🤫 Unsaid Confessions Drop Sunday. Nation Simultaneously Relieved and Devastated to Not Be Alone.</strong>
+        Readers submitted what they've never said out loud. A startup that exists only as a Notion page. A TV show recommendation from someone on episode 4. A person who cried in a Zomato delivery guy's general direction on a Tuesday. "I thought I was the only one," said 94% of readers who recognised themselves in multiple confessions. They are not the only one. They are the plurality. People will send these to each other and say "yaar yeh main hun." That is the correct response.
+      </div>
+      <div class="v-meter">1.9M reads<div class="bar"><div class="bar-fill" style="width:0" data-w="83%"></div></div>ratio: uncomfortably accurate</div>
+    </div>
+    <div class="v-item">
+      <div class="v-rank">3</div>
+      <div class="v-text">
+        <strong>📊 Sharma Ji Ka Beta Index Drops Sunday. Overthinking at 847. "I'm Fine" Accuracy at 11%. Analysts: Unsurprised.</strong>
+        The weekly index confirmed what everyone already knew. The "Kal Se Pakka" Conversion Rate remains in seasonal decline. 340 million people said "bas ek aur reel" before bed. "The data is fabricated but the accuracy is real," said an analyst who then immediately put that quote on their LinkedIn. The LinkedIn post was almost certainly written with AI assistance. The analyst has no feelings about this.
+      </div>
+      <div class="v-meter">1.4M shares<div class="bar"><div class="bar-fill" style="width:0" data-w="61%"></div></div>ratio: statistically devastating</div>
+    </div>
+    <div class="v-item">
+      <div class="v-rank">4</div>
+      <div class="v-text">
+        <strong>🎓 Topper Asked Secret. Says "Consistency." Studied 14 Hours a Day for 3 Years. Four Words Explains Zero of It.</strong>
+        The topper gave up weekends, birthdays, relationships, and the entire experience of being 21 in a city that was happening without them. They emerged with a rank, a job, and four words of advice. Those four words were then used by a person with a ring light to create content that got 2.3 million views. The topper was not tagged. The topper does not have a ring light. The topper is on the train.
+      </div>
+      <div class="v-meter">980K views<div class="bar"><div class="bar-fill" style="width:0" data-w="43%"></div></div>ratio: earned in silence</div>
+    </div>
+    <div class="v-item">
+      <div class="v-rank">5</div>
+      <div class="v-text">
+        <strong>🌐 Entire Generation Performing Certainty at Each Other Simultaneously. Nobody Has a Plan. Everyone Performing Fine.</strong>
+        A nationwide audit of Sunday conversations found that 94% of responses to "so what are you doing these days?" were rehearsed on the rickshaw over, and 100% of people on both sides of the conversation privately felt like the only one without a clear plan. "This is fine," said everyone. Everyone was performing. The performance was extremely convincing. This is not a compliment to them. It is permission for everyone else.
+      </div>
+      <div class="v-meter">760K engagements<div class="bar"><div class="bar-fill" style="width:0" data-w="33%"></div></div>ratio: nationally coordinated</div>
+    </div>
+  </div>
+
+  <!-- RASHIFAL -->
+  <div class="section-label">🔮 Aaj Ka Bhavishya — Sunday, 24 May 2026 · Unsolicited Cosmic Psychoanalysis</div>
+  <div style="border:2px solid var(--rule);margin-bottom:28px;overflow:hidden">
+    <div style="background:var(--ink);color:var(--yellow);padding:12px 20px;display:flex;justify-content:space-between;align-items:center">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px">🔮 UNSAID RASHIFAL — ZERO ACCURACY GUARANTEED</span>
+      <span style="font-size:8px;font-family:'Space Mono',monospace;color:#888;letter-spacing:0.1em">Stars consulted. Stars unbothered.</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0" id="horoscope-grid"></div>
+    <div style="background:#faf6ed;padding:10px 20px;border-top:1px solid var(--rule);font-size:9px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase">Disclaimer: UNSAID Rashifal written by someone who failed Geography twice. Consult actual astrologer for life decisions. Or don't. Stars don't care.</div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-brand">UN<span>SAID</span></div>
+  <div>© 2026 · Vol. I · Issue No. 025 · Sunday, 24 May 2026 · All Subtext Reserved · Jugaad Journalism™</div>
+  <div>unsaid.wtf · Jo kaha nahi gaya — woh hum kahenge · Made in 🇮🇳 with no sleep and deep concern</div>
+</footer>
+
+<script>
+const TICKER_ITEMS = [
+  "🏆 BREAKING: 'Just Be Consistent' wins Aaj Ka Villain Award. Nobody collected it. Recipient currently posting about not needing external validation.",
+  "💡 Consistency guru records 47-second video at 5 AM. 2.3M views. Zero definitions. ₹4,999 masterclass open. Already sold out.",
+  "📊 National Overthinking Index: 847 points. Up 34%. Friday night alone: 61% of total volume. Researchers: unsurprised.",
+  "🤫 Unsaid Confessions drop Sunday. Nation simultaneously relieved and devastated to not be alone in the Notion page startup.",
+  "📉 'I'm Fine' Accuracy Rate: 11%. Down from 14%. Margin of error: ±everything. This is the most honest number in the report.",
+  "🏃 Situationship Clarity Score: 2.1/10. All-time low. 'We're just talking' entered week 47. Week 48 scheduled.",
+  "☕ Sunday Slow Read: Everyone looks like they know what they're doing. Nobody does. We have agreed not to discuss this.",
+  "📱 340 million Indians said 'bas ek aur reel' before bed last night. Researchers: national constant. Like gravity.",
+  "🎓 Topper studied 14 hrs/day for 3 years. Secret? 'Consistency.' Four words. Explains none of it. Ring light version: available.",
+  "🗞️ Sunday forecast: 94% performance of certainty, 89% rehearsed answers to 'so what are you doing', 11% accuracy on 'I'm fine'.",
+  "🚆 The actual consistent people in India are on the 5:47 train. Not filming it. Not charging ₹4,999 for the masterclass.",
+];
+const all = [...TICKER_ITEMS, ...TICKER_ITEMS];
+document.getElementById('tickerInner').innerHTML = all.map(t => `<span>${t}</span>`).join('');
+
+setTimeout(() => {
+  document.querySelectorAll('.bar-fill').forEach(el => { el.style.width = el.dataset.w; });
+}, 600);
+
+const RASHIFAL = [
+  { sign: "♈ Mesh", emoji: "🐏", prediction: "Shani is watching. So is your relative who asks salary every family lunch. Today is Sunday family lunch. They have aligned. Carry backup answers. Also carry chai." },
+  { sign: "♉ Vrishabh", emoji: "🐂", prediction: "Mercury says your shower startup idea this morning was actually good. Mercury is lying. Write it down anyway. 0.001% survival rate still beats 0%. Your intentions remain strong." },
+  { sign: "♊ Mithun", emoji: "👯", prediction: "You will perform certainty at a family function today. You rehearsed on the way over. The rehearsal will not cover the follow-up question. It never does. Carry extra chai." },
+  { sign: "♋ Kark", emoji: "🦀", prediction: "Moon is emotional. You are also emotional. Together you will relate to all 8 Unsaid Confessions personally. This is fine. The stars say: it is fine. The 11% I'm Fine accuracy confirms: also fine." },
+  { sign: "♌ Simha", emoji: "🦁", prediction: "Sun is strong. So is your conviction that you will 'start seriously on Monday.' Monday will arrive. Monday will be rescheduled to next Monday. The pattern will not surprise you. It never does." },
+  { sign: "♍ Kanya", emoji: "📋", prediction: "Budh says you will make a very detailed to-do list today. You will complete item 1. Item 1 was: make to-do list. The remaining 14 items will be moved to tomorrow. Tomorrow's list will be very detailed." },
+  { sign: "♎ Tula", emoji: "⚖️", prediction: "Guru is confused about your life decisions. So are you. So is your family. You are all performing certainty at each other over Sunday lunch. Auspicious colour: whichever one photographs as most confident." },
+  { sign: "♏ Vrishchik", emoji: "🦂", prediction: "Mars is angry. You are also angry, specifically at a 47-second consistency reel that got 2.3M views and explained nothing. Your rage is valid. Stars confirm. The ₹4,999 masterclass remains unopened." },
+  { sign: "♐ Dhanu", emoji: "🏹", prediction: "Jupiter blesses you with big Sunday energy. Also the Sharma Ji Ka Beta Index dropped and several numbers apply directly to your life situation. Read it. Close the tab. Reopen it." },
+  { sign: "♑ Makar", emoji: "🐐", prediction: "Saturn tests your patience today via: a relative asking placement ka kya hua, slow Wi-Fi during the consistency reel, and someone saying 'bas consistent raho' without once defining consistent." },
+  { sign: "♒ Kumbh", emoji: "🏺", prediction: "Rahu is creating the illusion that everyone else has a plan. They don't. You don't. Nobody does. Lucky number: 11 (the I'm Fine Accuracy Rate). Auspicious action: admitting it, at least to yourself." },
+  { sign: "♓ Meen", emoji: "🐟", prediction: "Neptune governs dreams. You have many. The Sunday Slow Read today was written for you specifically. The stars say you're doing great. The stars are also not checking your attendance. Auspicious time: now." },
+];
+
+const grid = document.getElementById('horoscope-grid');
+grid.innerHTML = RASHIFAL.map(r => `
+  <div style="border:1px solid var(--rule);padding:14px 16px;border-left:none;border-top:none">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:15px;color:var(--saffron);letter-spacing:0.5px;margin-bottom:4px">${r.emoji} ${r.sign}</div>
+    <div style="font-size:10px;line-height:1.65;color:#3a3028">${r.prediction}</div>
+  </div>
+`).join('');
+</script>
+</body>
+</html>
