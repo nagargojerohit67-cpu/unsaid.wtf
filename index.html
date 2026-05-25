@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNSAID — Desi Dark Times Edition · 26 May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d0d0d;--paper:#f4efe3;--saffron:#FF6B00;--green:#138808;--yellow:#FFC300;--cream:#fdf8ee;--muted:#7a6e60;--rule:#c4b89a;--white:#fff}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Space Mono',monospace;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+.ticker{background:var(--saffron);color:var(--white);font-size:10px;letter-spacing:0.1em;overflow:hidden;white-space:nowrap;padding:5px 0;border-bottom:2px solid var(--ink)}
+.ticker-inner{display:inline-block;animation:tick 65s linear infinite}
+.ticker-inner span{margin:0 36px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.flag-stripe{height:5px;background:linear-gradient(to right,#FF9933 33.33%,#fff 33.33% 66.66%,#138808 66.66%)}
+header{border-bottom:4px double var(--rule);padding:20px 36px 14px;display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:8px}
+.h-left,.h-right{font-size:9.5px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;line-height:2}
+.h-right{text-align:right}
+.masthead-center{text-align:center}
+.masthead-center h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,7.5vw,100px);line-height:0.88;letter-spacing:1px}
+.masthead-center h1 span{color:var(--saffron)}
+.hindi-sub{font-family:'Tiro Devanagari Hindi',serif;font-size:13px;color:var(--muted);margin-top:4px;letter-spacing:0.05em}
+.tagline{font-family:'DM Serif Display',serif;font-style:italic;font-size:11px;color:var(--muted);margin-top:2px}
+.edition-pill{display:inline-block;background:var(--ink);color:var(--yellow);font-size:8px;font-weight:700;letter-spacing:0.2em;padding:2px 10px;text-transform:uppercase;margin-bottom:6px}
+nav{border-bottom:2px solid var(--rule);padding:7px 36px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:4px 14px;border-right:1px solid var(--rule);white-space:nowrap;transition:all 0.15s}
+nav a:first-child{border-left:1px solid var(--rule)}
+nav a:hover,nav a.active{background:var(--ink);color:var(--yellow)}
+main{max-width:1300px;margin:0 auto;padding:22px 36px 60px}
+.section-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);border-top:3px solid var(--ink);padding-top:5px;margin-bottom:18px}
+.tag{display:inline-block;font-size:8.5px;font-weight:700;letter-spacing:0.18em;padding:2px 9px;text-transform:uppercase;margin-bottom:9px}
+.tag-black{background:var(--ink);color:var(--yellow)}
+.tag-saffron{background:var(--saffron);color:white}
+.tag-green{background:var(--green);color:white}
+.hero-wrap{display:grid;grid-template-columns:1.9fr 1fr;gap:0;border-bottom:2px solid var(--rule);padding-bottom:26px;margin-bottom:28px}
+.hero-main{border-right:2px solid var(--rule);padding-right:28px}
+.hero-side{padding-left:26px;display:flex;flex-direction:column;gap:22px}
+.hero-hl{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4.2vw,64px);line-height:0.92;margin-bottom:10px}
+.hero-deck{font-family:'DM Serif Display',serif;font-style:italic;font-size:15px;line-height:1.45;border-left:3px solid var(--saffron);padding-left:12px;margin-bottom:14px;color:#2a2420}
+.body-text{font-size:11.5px;line-height:1.85;color:#2e2820}
+.body-text p{margin-bottom:10px}
+.hl{background:var(--yellow);padding:0 3px;font-weight:700}
+.article-meta{display:flex;gap:12px;font-size:9px;color:var(--muted);letter-spacing:0.09em;text-transform:uppercase;margin-top:14px;align-items:center;flex-wrap:wrap}
+.dot{color:var(--rule)}
+.villain-box{background:var(--ink);border:3px solid var(--yellow);padding:24px 28px;margin:20px 0;position:relative}
+.villain-label{font-family:'Bebas Neue',sans-serif;font-size:11px;color:var(--saffron);letter-spacing:0.3em;margin-bottom:8px}
+.villain-hl{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,3.5vw,46px);color:var(--yellow);line-height:0.95;margin-bottom:12px}
+.villain-body{font-size:11px;line-height:1.8;color:#c4b89a}
+.villain-citation{border-top:1px dashed #444;margin-top:16px;padding-top:14px;font-family:'DM Serif Display',serif;font-style:italic;font-size:13px;color:var(--yellow);line-height:1.6}
+.trophy-icon{position:absolute;top:20px;right:24px;font-size:48px;opacity:0.2}
+.ringlight-visual{background:#111;border:2px solid #333;padding:20px;text-align:center;margin:16px 0}
+.ring-outer{width:90px;height:90px;border-radius:50%;border:10px solid var(--yellow);box-shadow:0 0 0 5px #222,0 0 0 10px var(--saffron),0 0 40px rgba(255,195,0,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:24px}
+.rl-caption{font-size:9px;color:#666;letter-spacing:0.15em;font-family:'Space Mono',monospace}
+.confession-section{background:#fdf8ee;border:2px solid var(--rule);padding:22px 26px;margin-bottom:28px}
+.confession-header{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--ink);letter-spacing:1px;border-bottom:2px solid var(--rule);padding-bottom:10px;margin-bottom:18px}
+.confession-header span{color:var(--saffron)}
+.confession-sub{font-size:9px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-top:4px;font-family:'Space Mono',monospace}
+.confession-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.confession-card{border-left:3px solid var(--saffron);padding:16px 16px 16px 28px;background:white;font-family:'DM Serif Display',serif;font-style:italic;font-size:13px;line-height:1.65;color:#2e2820;position:relative}
+.confession-card::before{content:'"';font-size:52px;color:#f0e8d0;position:absolute;top:-2px;left:8px;font-style:normal;line-height:1;font-family:'DM Serif Display',serif}
+.index-section{margin-bottom:28px;border:2px solid var(--ink);overflow:hidden}
+.index-header{background:var(--ink);color:var(--yellow);padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
+.index-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px}
+.index-sub{font-size:8px;color:#888;letter-spacing:0.1em;margin-top:2px}
+.index-table{width:100%;border-collapse:collapse;font-size:10.5px}
+.index-table th{background:#f0e8d8;padding:8px 14px;text-align:left;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule)}
+.index-table td{padding:9px 14px;border-bottom:1px solid #e8e0d0;vertical-align:middle;line-height:1.4}
+.index-table tr:last-child td{border-bottom:none}
+.index-table tr:nth-child(even) td{background:#faf6ed}
+.metric-name{font-weight:700}
+.metric-value{font-family:'Bebas Neue',sans-serif;font-size:16px}
+.change-up{color:#c33}
+.change-dn{color:#138808}
+.change-flat{color:var(--muted)}
+.analyst-note{font-size:9.5px;color:#5a4e42;font-style:italic}
+.index-summary{padding:14px 20px;background:#f0e8d8;border-top:1px solid var(--rule);font-size:10.5px;line-height:1.8;color:#3a3028}
+.side-card{border-top:2px solid var(--rule);padding-top:14px}
+.side-hl{font-family:'DM Serif Display',serif;font-size:17px;line-height:1.22;margin-bottom:8px}
+.side-body{font-size:10.5px;line-height:1.72;color:#3e3428}
+.pull{border-left:5px solid var(--saffron);border-right:5px solid var(--saffron);padding:18px 24px;margin:26px 0;text-align:center}
+.pull blockquote{font-family:'DM Serif Display',serif;font-style:italic;font-size:24px;line-height:1.35}
+.pull cite{font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);display:block;margin-top:8px;font-style:normal}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;border-bottom:2px solid var(--rule);padding-bottom:28px;margin-bottom:28px}
+.col-card{border-top:2px solid var(--ink);padding-top:11px}
+.col-hl{font-family:'DM Serif Display',serif;font-size:19px;line-height:1.22;margin-bottom:8px}
+.col-body{font-size:10.5px;line-height:1.75;color:#342e28}
+.slow-read{background:var(--cream);border:2px solid var(--rule);padding:32px 36px;margin-bottom:28px}
+.slow-read-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--saffron);margin-bottom:12px}
+.slow-read-hl{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.8vw,34px);line-height:1.18;margin-bottom:18px;max-width:820px}
+.slow-body{font-family:'DM Serif Display',serif;font-size:14px;line-height:1.9;color:#2e2820;max-width:820px;columns:2;column-gap:36px}
+.slow-body p{margin-bottom:14px;break-inside:avoid}
+.slow-callout{background:var(--ink);color:var(--yellow);padding:16px 20px;margin:20px 0;font-family:'DM Serif Display',serif;font-style:italic;font-size:16px;line-height:1.55;break-inside:avoid}
+.slow-hindi{font-family:'Tiro Devanagari Hindi',serif;font-size:16px;color:var(--saffron);font-style:italic}
+.opinion{background:var(--ink);color:var(--paper);padding:22px 26px;margin-bottom:28px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
+.op-label{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--saffron);writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:2px;line-height:1}
+.op-hl{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,3vw,38px);line-height:0.95;color:var(--yellow);margin-bottom:10px}
+.op-body{font-size:11.5px;line-height:1.82;color:#c4b89a}
+.op-author{font-size:8.5px;color:#888;letter-spacing:0.12em;text-transform:uppercase;margin-top:10px}
+.viral{border:2px solid var(--rule);margin-bottom:28px;overflow:hidden}
+.viral-title{background:var(--ink);color:var(--yellow);padding:10px 18px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;display:flex;justify-content:space-between;align-items:center}
+.viral-title span{font-size:8.5px;font-family:'Space Mono',monospace;color:#888;letter-spacing:0.1em}
+.v-item{display:grid;grid-template-columns:34px 1fr 180px;gap:0;border-bottom:1px solid var(--rule);padding:14px 18px;align-items:start}
+.v-item:last-child{border-bottom:none}
+.v-rank{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--saffron);line-height:1;padding-top:2px}
+.v-text{font-size:10.5px;line-height:1.68;padding:0 16px;color:#2e2820}
+.v-text strong{display:block;font-family:'DM Serif Display',serif;font-size:14px;margin-bottom:4px;font-weight:normal}
+.v-meter{font-size:9px;color:var(--muted);text-align:right;padding-left:12px}
+.bar{height:4px;background:#ddd;margin:6px 0;border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;background:var(--saffron);transition:width 1.2s ease}
+footer{border-top:4px double var(--rule);padding:20px 36px;display:flex;justify-content:space-between;align-items:center;font-size:9.5px;color:var(--muted);letter-spacing:0.1em}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--ink)}
+.footer-brand span{color:var(--saffron)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-wrap{animation:fadeUp 0.5s ease both 0.1s}
+.three-col{animation:fadeUp 0.5s ease both 0.2s}
+.opinion{animation:fadeUp 0.5s ease both 0.25s}
+.viral{animation:fadeUp 0.5s ease both 0.3s}
+.confession-section{animation:fadeUp 0.5s ease both 0.35s}
+.slow-read{animation:fadeUp 0.5s ease both 0.4s}
+@media(max-width:800px){
+  header{grid-template-columns:1fr;text-align:center;padding:14px 18px 10px}
+  .h-left,.h-right{display:none}
+  main{padding:14px 16px 40px}
+  nav{padding:7px 16px}
+  .hero-wrap{grid-template-columns:1fr}
+  .hero-main{border-right:none;padding-right:0;border-bottom:2px solid var(--rule);padding-bottom:18px;margin-bottom:18px}
+  .hero-side{padding-left:0}
+  .three-col{grid-template-columns:1fr}
+  .opinion{grid-template-columns:1fr}
+  .op-label{writing-mode:horizontal-tb;transform:none;font-size:22px}
+  .confession-grid{grid-template-columns:1fr}
+  .slow-body{columns:1}
+  .v-item{grid-template-columns:30px 1fr}
+  .v-meter{display:none}
+  footer{flex-direction:column;gap:6px;text-align:center;padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="flag-stripe"></div>
+<div class="ticker"><div class="ticker-inner" id="tickerInner"></div></div>
+
+<header>
+  <div class="h-left">
+    <div class="edition-pill">🪳 Desi Dark Times Edition 🇮🇳</div>
+    <div>Wednesday, 26 May 2026</div>
+    <div>Vol. I · Issue No. 2</div>
+    <div>Price: Your Mental Peace</div>
+  </div>
+  <div class="masthead-center">
+    <h1>UN<span>SAID</span></h1>
+    <div class="hindi-sub">सच बोलते हैं, चाहे कोई सुने या न सुने</div>
+    <div class="tagline">"Sach Bolte Hain, Chahe Koi Sune Ya Na Sune"</div>
+  </div>
+  <div class="h-right">
+    <div>Est. 2024</div>
+    <div>Readership: Chronically Online Bharatiyas</div>
+    <div>Bias: Uncomfortably Accurate</div>
+    <div>Coverage: Maharashtra Edition</div>
+  </div>
+</header>
+
+<nav>
+  <a href="#" class="active">Front Page</a>
+  <a href="#">Bharat Ki Baat</a>
+  <a href="#">Duniya Ka Dramaaa</a>
+  <a href="#">Internet Wali Duniya</a>
+  <a href="#">Padhai-Wali Problems</a>
+  <a href="#">Rashifal</a>
+</nav>
+
+<main>
+  <div class="section-label">Bharat Ki Baat — 26 May 2026 · Desh-Videsh Samachar</div>
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <div class="hero-main">
+      <span class="tag tag-black">🪳 BREAKING — BHARAT KI BAAT</span>
+      <h2 class="hero-hl">COCKROACH JANTA PARTY<br>REACHES DELHI HIGH COURT</h2>
+      <p class="hero-deck">India's first insect-based opposition movement now fighting censorship allegations — political leaders reacting, police warning of scam links, and Gen Z absolutely thriving</p>
+      <div class="body-text">
+        <p>The founder of the viral Cockroach Janta Party (CJP), <strong>Abhijeet Dipke</strong>, has moved the Delhi High Court after the movement's social media accounts were reportedly blocked amid an online crackdown. India's greatest satirical political experiment has now entered its legal era.</p>
+        <p>Political leaders are reacting publicly. Police have issued scam warnings over fake CJP membership links — because naturally there are already scammers monetising the cockroach revolution. And the movement has become <strong class="hl">one of India's biggest Gen Z political phenomena.</strong></p>
+        <p>To recap why we are here: Indian youth were called <em>unemployed, lazy, cockroaches.</em> They responded by launching a political movement, hiring graphic designers, and accidentally terrifying the establishment. The government expected protests. They got professionally designed logos.</p>
+        <p>This is no longer "just internet humour." This is what happens when <strong>unemployment meets unlimited data packs.</strong></p>
+      </div>
+
+      <!-- Visual box -->
+      <div class="ringlight-visual">
+        <div style="font-family:'Space Mono',monospace;font-size:8px;color:#888;letter-spacing:0.2em;margin-bottom:14px;">🪳 UNSAID ILLUSTRATION — CJP LEGAL DESK</div>
+        <div class="ring-outer" style="font-size:28px">⚖️</div>
+        <div style="color:var(--yellow);font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;margin-bottom:8px;">DELHI HIGH COURT · CENSORSHIP · GEN Z UNBOTHERED</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:420px;margin:10px auto;font-size:9px;font-family:'Space Mono',monospace">
+          <div style="border:1px solid #333;padding:8px;color:#aaa;">⚖️ Court Filed<br><span style="color:var(--yellow);font-family:'Bebas Neue',sans-serif;font-size:18px">YES</span></div>
+          <div style="border:1px solid #333;padding:8px;color:#aaa;">📱 Accounts Blocked<br><span style="color:var(--yellow);font-family:'Bebas Neue',sans-serif;font-size:18px">TRIED</span></div>
+          <div style="border:1px solid #333;padding:8px;color:#aaa;">🪳 Movement Status<br><span style="color:var(--yellow);font-family:'Bebas Neue',sans-serif;font-size:18px">ALIVE</span></div>
+        </div>
+        <div class="rl-caption">Govt blocked the accounts. CJP filed in court. WhatsApp uncles: still unsure if this is a startup funded by foreign cockroaches.</div>
+      </div>
+
+      <div class="villain-box">
+        <div class="trophy-icon">🪳</div>
+        <div class="villain-label">📰 BY: OUR UNEMPLOYED CORRESPONDENT | POSTED: 10:30 AM</div>
+        <div class="villain-hl">CJP IN COURT:<br>THE LEGAL COCKROACH ERA BEGINS</div>
+        <div class="villain-body">Previous generations said: <em>"Join politics to change the nation."</em> Gen Z said: <em>"Join politics because meme template relatable."</em> And now they are in the Delhi High Court. The establishment expected silence. It got a petition. <strong style="color:var(--yellow)">WhatsApp uncles remain confused whether CJP is satire, opposition, or a startup funded by foreign cockroaches.</strong></div>
+        <div class="villain-citation">
+          "We expected protests. We did not expect professionally designed logos."
+          <br><br>
+          <span style="font-size:11px;font-style:normal;color:#888;font-family:'Space Mono',monospace;letter-spacing:0.1em">— Unnamed Sources, completely fabricated, 100% accurate in spirit</span>
+        </div>
+      </div>
+
+      <div class="article-meta">
+        <span>UNSAID: They Called Them Cockroaches. Now It's In Court.</span>
+        <span class="dot">·</span>
+        <span>Our Unemployed Correspondent</span>
+        <span class="dot">·</span>
+        <span>5 min read · 🔥 Trending Nationally</span>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="side-card">
+        <span class="tag tag-saffron">🤖 AI SUPERPOWER</span>
+        <h3 class="side-hl">India Wants to Become an AI Superpower. College Projectors Still Don't Work.</h3>
+        <p class="side-body">India's AI ambitions dominated conversations after the India AI Impact Summit highlighted Indian language AI models, AI governance, and massive infrastructure plans. Global tech leaders and billionaires attended.<br><br>India is now building sovereign AI, national GPU infrastructure, and multimodal models. Meanwhile engineering students are still naming folders: <em>"FINALfinal_USETHIS2.pdf"</em><br><br>Every engineering student after hearing "AI": updates LinkedIn bio, writes "AI enthusiast," watches one tutorial, becomes thought leader temporarily.</p>
+        <div class="article-meta" style="margin-top:8px;">Our Digital Distress Reporter · Posted: 10:45 AM</div>
+      </div>
+      <div class="side-card">
+        <span class="tag tag-black">📚 EXAM SEASON</span>
+        <h3 class="side-hl">Students Enter Peak Exam Panic Mode. Entire Syllabus Now Spiritually Understood.</h3>
+        <p class="side-body">Across India, students continue emergency preparation using chai, YouTube one-shots, guilt, and motivational reels with piano music. The education system continues testing memory, obedience, and emotional durability. Critical thinking remains an optional DLC.<br><br>Indian parents every 11 minutes: "Phone side mein rakh." Student's actual screen: IPL highlights, "study with me" livestream, existential crisis, one PDF unopened since February.<br><br>Sleep has officially unfollowed students nationwide.</p>
+        <div class="article-meta" style="margin-top:8px;">Our Existential Education Correspondent · Posted: 10:55 AM</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <blockquote>"This is no longer just internet humour. This is what happens when unemployment meets unlimited data packs."</blockquote>
+    <cite>— UNSAID Desi Dark Times · Wednesday, 26 May 2026 · Maharashtra Edition · Accuracy: Uncomfortably High</cite>
+  </div>
+
+  <!-- DUNIYA KA DRAMAAA / INTERNATIONAL -->
+  <div class="section-label">🌍 Duniya Ka Dramaaa — International Affairs · The World Is A Group Project Gone Wrong</div>
+  <div class="confession-section">
+    <div class="confession-header">
+      DUNIYA KA <span>DRAMAAA</span>
+      <div class="confession-sub">International affairs, explained for people who have already given up on making sense of it.</div>
+    </div>
+    <div class="confession-grid">
+      <div class="confession-card">World leaders held another "crucial" summit. Leaders discussed trade, security, AI regulation, and regional tensions. Everyone expressed "deep concern." Lunch was excellent. Nobody agreed on anything. This is called diplomacy.</div>
+      <div class="confession-card">International diplomacy is basically: luxury hotels, tense handshakes, and carefully worded disappointment. The United Nations increasingly resembles an Indian wedding: everyone smiling publicly while privately discussing who insulted whom.</div>
+      <div class="confession-card">Internet users now trust meme pages more than news channels. Breaking news now arrives with subway surfers gameplay. Young Indians consume politics through edits, memes, sarcastic reels, and screenshots from accounts named "nationfirst_69."</div>
+      <div class="confession-card">Television news: dramatic music, shouting, 9 windows on screen. Instagram meme page: "bro country cooked 💀" — guess which one feels more honest. Satirical political pages continue shaping youth opinion faster than TV debates.</div>
+    </div>
+    <div style="text-align:center;margin-top:18px;font-size:9px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase">All stories sourced from real events · Sarcasm sourced from lived experience · 26 May 2026</div>
+  </div>
+
+  <!-- AAJ KA NEWS INDEX -->
+  <div class="section-label">📊 Aaj Ka Chaos Index — All Stories, Ranked By How Much They Made Our Correspondent Age</div>
+  <div class="index-section">
+    <div class="index-header">
+      <div>
+        <div class="index-title">📊 DESI DARK TIMES — AAJ KA STORY INDEX</div>
+        <div class="index-sub">Wednesday, 26 May 2026 · All news real · All sarcasm earned · Next publish: When more things go wrong (soon)</div>
+      </div>
+      <div style="font-size:28px;opacity:0.3">📰</div>
+    </div>
+    <table class="index-table">
+      <thead>
+        <tr><th>Story</th><th>Section</th><th>Chaos Level</th><th>Analyst Note</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="metric-name">CJP Delhi High Court — censorship challenge</span></td><td><span class="metric-value">Bharat</span></td><td><span class="change-up">🪳 Maximum</span></td><td class="analyst-note">Govt blocked accounts. CJP filed petition. Still tweeting.</td></tr>
+        <tr><td><span class="metric-name">India AI Impact Summit — sovereign AI plans</span></td><td><span class="metric-value">Bharat</span></td><td><span class="change-up">🤖 Aspirational</span></td><td class="analyst-note">GPU infrastructure planned. Projectors: still broken.</td></tr>
+        <tr><td><span class="metric-name">World leaders hold "crucial" summit</span></td><td><span class="metric-value">Duniya</span></td><td><span class="change-flat">🤝 Deeply Concerned</span></td><td class="analyst-note">Nobody agreed. Lunch was excellent.</td></tr>
+        <tr><td><span class="metric-name">Meme pages trusted more than news channels</span></td><td><span class="metric-value">Internet</span></td><td><span class="change-up">📱 Peak Shift</span></td><td class="analyst-note">nationfirst_69: more credible than primetime. Data: yes.</td></tr>
+        <tr><td><span class="metric-name">Students in peak exam panic mode</span></td><td><span class="metric-value">Padhai</span></td><td><span class="change-up">😰 Critical</span></td><td class="analyst-note">Syllabus: spiritually understood. Sleep: unfollowed.</td></tr>
+      </tbody>
+    </table>
+    <div class="index-summary"><strong>Index Summary — Wednesday, 26 May 2026:</strong> The Cockroach Janta Party has taken its fight to the Delhi High Court — legal cockroach era unlocked. India is building sovereign AI while engineering students rename their PDFs. World leaders held a summit; everybody was deeply concerned; nobody agreed; the lunch was reportedly very good. Meme pages are now the newspaper. Students are surviving on chai and piano music. A government intern is typing "India strongly condemns..." for the 49th time this month. <em>Next index: When the next disaster arrives. ETA: lower than expected.</em></div>
+  </div>
+
+  <!-- THREE COL — World + Internet + Student news -->
+  <div class="section-label">🌍 Duniya + Internet + Padhai — Three More Things That Happened Today</div>
+  <div class="three-col">
+    <div class="col-card">
+      <span class="tag tag-black">🌍 DUNIYA KA DRAMAAA</span>
+      <h3 class="col-hl">World Leaders Hold Another "Crucial" Summit. Global Peace Still Running on PowerPoint.</h3>
+      <p class="col-body">Leaders continued discussions on trade, security, AI regulation, and regional tensions. As always, countries expressed "deep concern." International diplomacy is basically: luxury hotels, tense handshakes, and carefully worded disappointment. The UN increasingly resembles an Indian wedding — everyone smiling publicly while privately discussing who insulted whom. The fake quote from diplomats: "We had frank and constructive discussions," meaning nobody agreed but lunch was excellent.</p>
+      <div class="article-meta" style="margin-top:10px;">Our Global Chaos Reporter · Posted: 11:00 AM</div>
+    </div>
+    <div class="col-card">
+      <span class="tag tag-saffron">📱 INTERNET WALI DUNIYA</span>
+      <h3 class="col-hl">Internet Users Now Trust Meme Pages More Than News Channels. Breaking News Has Subway Surfers.</h3>
+      <p class="col-body">Satirical political pages and meme accounts continue shaping youth opinion faster than traditional TV debates. Young Indians no longer consume politics through newspapers. They consume it through edits, memes, sarcastic reels, and screenshots from anonymous accounts named "nationfirst_69." TV news has dramatic music, shouting, and 9 windows on screen. Instagram meme page says "bro country cooked 💀." Guess which feels more honest.</p>
+      <div class="article-meta" style="margin-top:10px;">Our Chronically Online Desk · Posted: 11:20 AM</div>
+    </div>
+    <div class="col-card">
+      <span class="tag tag-green">🤖 AI WALI DUNIYA</span>
+      <h3 class="col-hl">India Becomes AI Superpower. Engineering Students' Folders Still Named "FINALfinal_USETHIS2.pdf"</h3>
+      <p class="col-body">The India AI Impact Summit highlighted Indian language AI models, AI governance, and massive infrastructure plans. India's tech ecosystem invents billion-dollar AI models but still says "Mic on karo, awaaz nahi aa rahi." Every engineering student after hearing "AI": updates LinkedIn bio, writes "AI enthusiast," watches one tutorial, becomes thought leader temporarily. Our AI platform is scalable, disruptive, and currently searching for funding. Classic.</p>
+      <div class="article-meta" style="margin-top:10px;">Our Silicon Valley Confusion Desk · Posted: 11:40 AM</div>
+    </div>
+  </div>
+
+  <!-- SLOW READ — Exam panic story -->
+  <div class="section-label">📚 Padhai Ki Baat — The One Story With No Jokes. Just The Exam Situation.</div>
+  <div class="slow-read">
+    <div class="slow-read-label">📚 PADHAI SLOW READ · 26 May 2026</div>
+    <h2 class="slow-read-hl">"Chai. YouTube. Piano Music. Guilt." — India's Students Enter Peak Exam Panic Mode and the Syllabus Is Now a Spiritual Concept</h2>
+    <div class="slow-body">
+      <p>Across India, students continue their annual emergency preparation ritual using the four sacred tools: chai, YouTube one-shots, guilt, and motivational reels with piano music over a sunset timelapse. The exam is near. The syllabus was always going to be this far away.</p>
+      <p>The education system, as always, continues testing three things: memory, obedience, and emotional durability. Critical thinking remains an optional DLC — available in premium institutes only, pricing upon application.</p>
+      <div class="slow-callout">Indian parents every 11 minutes: "Phone side mein rakh." Student's actual screen: IPL highlights, "study with me" livestream, existential crisis, one PDF unopened since February.</div>
+      <p>There is something deeply poetic about the Indian exam season. The syllabus, which spent months being abstract and distant, suddenly becomes very real in the final week. Notes are borrowed. Toppers are approached. Someone's 2019 handwritten notes are photographed and shared to seventeen WhatsApp groups simultaneously.</p>
+      <p>The topper's fake quote, delivered with complete sincerity: "I revised properly," said a student seeing chapter names for the first time. The collective nod that followed was the most honest moment of the semester.</p>
+      <div class="slow-callout">"I revised properly," said a student seeing the chapter names for the first time. Twenty-seven people agreed. Nobody made eye contact.</div>
+      <p>Sleep has officially unfollowed students nationwide. The 2 AM study session has begun — not because the student is productive, but because the silence of night feels more appropriate for quiet academic panic than the chaos of afternoon.</p>
+      <p>The exams will happen. The results will arrive. And somewhere in a rented room, a student is closing seventeen motivational reels and opening, for the first time, <span class="slow-hindi">woh wala PDF jo February se band tha.</span> As always. As ever. They will cope. They always do.</p>
+    </div>
+  </div>
+
+  <!-- OPINION -->
+  <div class="opinion">
+    <div class="op-label">OPINION</div>
+    <div>
+      <div class="op-hl">WEDNESDAY CONFIRMED: INDIA RUNS ON MEMES REPLACING MANIFESTOS, AI REPLACING EFFORT, CAFFEINE REPLACING SLEEP, AND HASHTAGS REPLACING GOVERNANCE.</div>
+      <p class="op-body">India in 2026 runs on: memes replacing manifestos, AI replacing effort, students replacing sleep with caffeine, and politicians replacing governance with hashtags. The Cockroach Janta Party is in the Delhi High Court. Engineering students are updating their LinkedIn bios to "AI enthusiast." World leaders held a summit where nobody agreed but everyone expressed deep concern and ate a very good lunch. Meme pages now break news faster than primetime. Satirical pages are shaping elections. Meanwhile, somewhere, a government intern is still typing "India strongly condemns…" for the 49th time this month. At press time: CJP supporters were making Canva posters, engineering students were pretending AI is their passion, and millions of employees opened work emails with the same emotional energy as ancient warriors entering battle. <em>This is India. Sach bolte hain.</em></p>
+      <div class="op-author">— UNSAID Editorial Desk · Desi Dark Times Edition · Vol. I · Issue No. 2 · Wednesday, 26 May 2026 · Maharashtra Edition · Opinions expressed are the ones nobody put in a WhatsApp forward</div>
+    </div>
+  </div>
+
+  <!-- VIRAL RATIO -->
+  <div class="viral">
+    <div class="viral-title">
+      WEDNESDAY CHAOS RATIO REPORT — 26 MAY 2026
+      <span>Updated: every time a government intern types "strongly condemns"</span>
+    </div>
+    <div class="v-item">
+      <div class="v-rank">1</div>
+      <div class="v-text">
+        <strong>🪳 CJP Reaches Delhi High Court. Legal Cockroach Era Unlocked. Establishment: Still Confused.</strong>
+        Abhijeet Dipke has moved the Delhi High Court after CJP's social media accounts were blocked. Political leaders are reacting. Police are warning about fake membership scam links. The movement is one of India's biggest Gen Z political phenomena. They were called unemployed, lazy, cockroaches. They responded by hiring graphic designers and accidentally terrifying the establishment. This is no longer internet humour.
+      </div>
+      <div class="v-meter">Legal era: active<div class="bar"><div class="bar-fill" style="width:0" data-w="100%"></div></div>ratio: professionally designed</div>
+    </div>
+    <div class="v-item">
+      <div class="v-rank">2</div>
+      <div class="v-text">
+        <strong>🤖 India Announces AI Superpower Plans. College Projector Still Requires 3 Restarts to Function.</strong>
+        The India AI Impact Summit promised sovereign AI, national GPU infrastructure, and multimodal models in Indian languages. Global tech leaders and billionaires attended. Meanwhile engineering students are still naming files "FINALfinal_USETHIS2.pdf" and updating LinkedIn bios to "AI enthusiast" after watching one YouTube tutorial. Our AI platform is scalable, disruptive, and currently searching for funding.
+      </div>
+      <div class="v-meter">GPU infra: planned<div class="bar"><div class="bar-fill" style="width:0" data-w="80%"></div></div>ratio: aspirationally sovereign</div>
+    </div>
+    <div class="v-item">
+      <div class="v-rank">3</div>
+      <div class="v-text">
+        <strong>🌍 World Leaders Hold Crucial Summit. Nobody Agreed on Anything. Lunch: Excellent.</strong>
+        Leaders discussed trade, security, AI regulation, and regional tensions. Everyone expressed deep concern. International diplomacy remains: luxury hotels, tense handshakes, and carefully worded disappointment. The UN resembles an Indian wedding — everyone smiling publicly while privately discussing who insulted whom. The fake diplomat quote: "We had frank and constructive discussions," meaning nobody agreed but nobody left hungry.
+      </div>
+      <div class="v-meter">Concern level: grave<div class="bar"><div class="bar-fill" style="width:0" data-w="62%"></div></div>ratio: powerpoint peace</div>
+    </div>
+    <div class="v-item">
+      <div class="v-rank">4</div>
+      <div class="v-text">
+        <strong>📱 Meme Pages Now More Trusted Than News Channels. Breaking News Arrives With Subway Surfers Gameplay.</strong>
+        Satirical political pages continue shaping youth opinion faster than TV debates. Young Indians consume politics through edits, memes, sarcastic reels, and screenshots from accounts named "nationfirst_69." TV news has dramatic music, shouting, 9 windows on screen. The meme page just says "bro country cooked 💀" — and somehow that feels more accurate than 45 minutes of primetime.
+      </div>
+      <div class="v-meter">Trust index: meme-first<div class="bar"><div class="bar-fill" style="width:0" data-w="44%"></div></div>ratio: subway-surfers certified</div>
+    </div>
+    <div class="v-item">
+      <div class="v-rank">5</div>
+      <div class="v-text">
+        <strong>📚 Students Enter Peak Exam Panic Mode. Syllabus Now a Spiritual Concept. Sleep: Unfollowed.</strong>
+        Across India, students are preparing using chai, YouTube one-shots, guilt, and motivational reels with piano music. The education system keeps testing memory, obedience, and emotional durability. Critical thinking remains an optional DLC. Indian parents every 11 minutes: "Phone side mein rakh." Student's actual screen: IPL highlights, study-with-me livestream, existential crisis, and one PDF unopened since February.
+      </div>
+      <div class="v-meter">Sleep: unfollowed<div class="bar"><div class="bar-fill" style="width:0" data-w="31%"></div></div>ratio: spiritually prepared</div>
+    </div>
+  </div>
+
+  <!-- RASHIFAL -->
+  <div class="section-label">🔮 Aaj Ka Bhavishya — Wednesday, 26 May 2026 · Unsolicited Cosmic Psychoanalysis</div>
+  <div style="border:2px solid var(--rule);margin-bottom:28px;overflow:hidden">
+    <div style="background:var(--ink);color:var(--yellow);padding:12px 20px;display:flex;justify-content:space-between;align-items:center">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px">🔮 UNSAID RASHIFAL — ZERO ACCURACY GUARANTEED</span>
+      <span style="font-size:8px;font-family:'Space Mono',monospace;color:#888;letter-spacing:0.1em">Stars consulted. Stars unbothered.</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0" id="horoscope-grid"></div>
+    <div style="background:#faf6ed;padding:10px 20px;border-top:1px solid var(--rule);font-size:9px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase">Disclaimer: UNSAID Rashifal written by someone who failed Geography twice. Consult actual astrologer for life decisions. Or don't. Stars don't care.</div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-brand">UN<span>SAID</span></div>
+  <div>© 2026 · Vol. I · Issue No. 2 · Wednesday, 26 May 2026 · All Subtext Reserved · Jugaad Journalism™</div>
+  <div>unsaid.wtf · Sach bolte hain, chahe koi sune ya na sune · Made in 🇮🇳 with no sleep and deep concern</div>
+</footer>
+
+<script>
+const TICKER_ITEMS = [
+  "🪳 BREAKING: CJP files in Delhi High Court. Social media accounts blocked. Movement unbothered. Canva posters: in production.",
+  "🤖 India AI Impact Summit: sovereign AI, GPU infra, multimodal models. Engineering student folder name: 'FINALfinal_USETHIS2.pdf'.",
+  "📚 Exam season: peak panic mode. Syllabus spiritually understood. Sleep unfollowed. YouTube one-shot: spiritually buffering.",
+  "🌍 World leaders hold crucial summit. Nobody agreed. Everybody concerned. Lunch: reportedly excellent. Peace: PowerPoint-based.",
+  "📱 Meme pages now trusted more than news channels. Breaking news arrives with Subway Surfers gameplay. Primetime: cooked.",
+  "🪳 CJP founder Abhijeet Dipke: moved to Delhi HC. WhatsApp uncles: still unsure if satire, opposition, or foreign cockroach startup.",
+  "🤖 Every engineering student post-AI summit: updates LinkedIn, writes 'AI enthusiast', watches one tutorial, becomes thought leader.",
+  "😰 Student exam screen: IPL highlights, study-with-me livestream, existential crisis, PDF unopened since February.",
+  "🗞️ Wednesday India runs on: memes replacing manifestos, AI replacing effort, caffeine replacing sleep, hashtags replacing governance.",
+  "🌍 UN expresses grave concern. Again. The international community has now issued 848 grave concerns this year. Badge: unlocked.",
+  "📰 Government intern typing 'India strongly condemns...' for the 49th time this month. Finger strength: improving significantly.",
+];
+const all = [...TICKER_ITEMS, ...TICKER_ITEMS];
+document.getElementById('tickerInner').innerHTML = all.map(t => `<span>${t}</span>`).join('');
+
+setTimeout(() => {
+  document.querySelectorAll('.bar-fill').forEach(el => { el.style.width = el.dataset.w; });
+}, 600);
+
+const RASHIFAL = [
+  { sign: "♈ Mesh", emoji: "🐏", prediction: "Shani says open that PDF. The one you downloaded in February and marked as important. It has been 3 months. The exam does not care about your feelings. Chai: first. PDF: second. Panic: already happening." },
+  { sign: "♉ Vrishabh", emoji: "🐂", prediction: "Mercury says CJP is in the Delhi High Court now. Mercury is impressed. Mercury did not expect the cockroaches to get this far. Mercury is reconsidering all future insect-based metaphors. Stars: supportive." },
+  { sign: "♊ Mithun", emoji: "👯", prediction: "You will update your LinkedIn bio to 'AI enthusiast' today after hearing about the India AI Impact Summit. You will watch one tutorial. You will call yourself a thought leader. The stars cannot stop you. Only you can stop you." },
+  { sign: "♋ Kark", emoji: "🦀", prediction: "Moon is emotional about the world summit. Many world leaders sat in a very expensive room and expressed deep concern about things they then did nothing about. Lunch was excellent. Moon: also deeply concerned. Also: unbothered." },
+  { sign: "♌ Simha", emoji: "🦁", prediction: "Sun is strong today. So is your trust in that meme page that posts political commentary with Subway Surfers in the background. The stars confirm: it IS more accurate than primetime news. Act accordingly." },
+  { sign: "♍ Kanya", emoji: "📋", prediction: "Budh says your sir is still 3 chapters behind conceptually, even if exams have passed. This is a metaphor for your life. The chapters nobody taught you are the ones the world will test you on. Auspicious action: YouTube one-shot, now." },
+  { sign: "♎ Tula", emoji: "⚖️", prediction: "Guru notes that the CJP founder filed in the Delhi High Court. Guru is not a lawyer but respects the move. You also have unresolved grievances that deserve a petition. Auspicious day to send that strongly-worded email you drafted." },
+  { sign: "♏ Vrishchik", emoji: "🦂", prediction: "Mars says the algorithm was designed to make you angry. Mars also says your uncle's WhatsApp forwards are a monetised product. Mars says you are the raw material. Lucky action: touch grass. Grass prices: ₹80/sqft. Grass: still cheaper than anxiety." },
+  { sign: "♐ Dhanu", emoji: "🏹", prediction: "Jupiter says India wants to be an AI superpower. Jupiter also says college projectors still require 3 restarts. Jupiter is holding both truths simultaneously. This is called wisdom. Also: your folder is still named FINALfinal. Rename it." },
+  { sign: "♑ Makar", emoji: "🐐", prediction: "Saturn tests your patience via: the AI summit you were not invited to, the exam you haven't prepared for, a relative asking 'LinkedIn pe kuch naya?' and a government intern typing 'India strongly condemns' for the 49th time. Auspicious response: chai." },
+  { sign: "♒ Kumbh", emoji: "🏺", prediction: "Rahu says memes are now the newspaper. Rahu is correct. You already knew this. The satirical reel with subway surfers was more accurate than 45 minutes of primetime drama. Lucky action: follow one more meme account. For civic education." },
+  { sign: "♓ Meen", emoji: "🐟", prediction: "Neptune governs dreams. Abhijeet Dipke dreamed of a political movement. It is now in the Delhi High Court. You also have dreams. Some of them involve the PDF you haven't opened since February. Open it. Auspicious time: now. Exam: also now." },
+];
+
+const grid = document.getElementById('horoscope-grid');
+grid.innerHTML = RASHIFAL.map(r => `
+  <div style="border:1px solid var(--rule);padding:14px 16px;border-left:none;border-top:none">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:15px;color:var(--saffron);letter-spacing:0.5px;margin-bottom:4px">${r.emoji} ${r.sign}</div>
+    <div style="font-size:10px;line-height:1.65;color:#3a3028">${r.prediction}</div>
+  </div>
+`).join('');
+</script>
+</body>
+</html>
