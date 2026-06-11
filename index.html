@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNSAID — India Edition 🇮🇳 · June 12 · Friday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d0d0d;
+  --paper: #f4efe3;
+  --saffron: #FF6B00;
+  --green: #138808;
+  --yellow: #FFC300;
+  --cream: #fdf8ee;
+  --muted: #7a6e60;
+  --rule: #c4b89a;
+  --white: #fff;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Space Mono', monospace;
+  overflow-x: hidden;
+}
+
+/* grain */
+body::after {
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;
+}
+
+/* ── TICKER ── */
+.ticker {
+  background: var(--saffron);
+  color: var(--white);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px 0;
+  border-bottom: 2px solid var(--ink);
+}
+.ticker-inner { display:inline-block; animation: tick 50s linear infinite; }
+.ticker-inner span { margin: 0 36px; }
+@keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── FLAG STRIPE ── */
+.flag-stripe {
+  height: 5px;
+  background: linear-gradient(to right, #FF9933 33.33%, #fff 33.33% 66.66%, #138808 66.66%);
+}
+
+/* ── MASTHEAD ── */
+header {
+  border-bottom: 4px double var(--rule);
+  padding: 20px 36px 14px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 8px;
+}
+.h-left, .h-right {
+  font-size: 9.5px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 2;
+}
+.h-right { text-align: right; }
+.masthead-center { text-align: center; }
+.masthead-center h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(44px, 7.5vw, 100px);
+  line-height: 0.88;
+  letter-spacing: 1px;
+}
+.masthead-center h1 span { color: var(--saffron); }
+.masthead-center .hindi-sub {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+.masthead-center .tagline {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.edition-pill {
+  display: inline-block;
+  background: var(--saffron);
+  color: white;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* ── NAV ── */
+nav {
+  border-bottom: 2px solid var(--rule);
+  padding: 7px 36px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+nav::-webkit-scrollbar{display:none}
+nav a {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 14px;
+  border-right: 1px solid var(--rule);
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+nav a:first-child{border-left:1px solid var(--rule)}
+nav a:hover, nav a.active{background:var(--ink);color:var(--yellow)}
+
+/* ── MAIN ── */
+main { max-width: 1300px; margin: 0 auto; padding: 22px 36px 60px; }
+
+.section-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-top: 3px solid var(--ink);
+  padding-top: 5px;
+  margin-bottom: 18px;
+}
+
+/* ── TAG ── */
+.tag {
+  display: inline-block;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 2px 9px;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+.tag-black { background: var(--ink); color: var(--yellow); }
+.tag-saffron { background: var(--saffron); color: white; }
+.tag-green { background: var(--green); color: white; }
+.tag-outline { border: 1.5px solid var(--ink); color: var(--ink); }
+
+/* ── HERO ── */
+.hero-wrap {
+  display: grid;
+  grid-template-columns: 1.9fr 1fr;
+  gap: 0;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 26px;
+  margin-bottom: 28px;
+}
+.hero-main { border-right: 2px solid var(--rule); padding-right: 28px; }
+.hero-side { padding-left: 26px; display: flex; flex-direction: column; gap: 22px; }
+
+.hero-hl {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(30px, 4.2vw, 64px);
+  line-height: 0.92;
+  margin-bottom: 10px;
+}
+.hero-deck {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.45;
+  border-left: 3px solid var(--saffron);
+  padding-left: 12px;
+  margin-bottom: 14px;
+  color: #2a2420;
+}
+.body-text {
+  font-size: 11.5px;
+  line-height: 1.85;
+  color: #2e2820;
+}
+.body-text p { margin-bottom: 10px; }
+.hl { background: var(--yellow); padding: 0 3px; font-weight: 700; }
+
+.article-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-top: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.dot { color: var(--rule); }
+
+/* ── MEME BOX ── */
+.meme-box {
+  background: var(--ink);
+  padding: 14px;
+  margin: 16px 0;
+  color: var(--yellow);
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+}
+.meme-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  color: #888;
+  letter-spacing: 0.2em;
+  margin-bottom: 6px;
+}
+.meme-visual {
+  background: #181818;
+  border: 1px dashed #444;
+  padding: 18px 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: 'Space Mono', monospace;
+  color: var(--yellow);
+}
+.meme-footer { font-size: 9px; color: #666; font-family:'Space Mono',monospace; margin-top:6px; }
+
+/* ── SIDE CARD ── */
+.side-card { border-top: 2px solid var(--rule); padding-top: 14px; }
+.side-hl {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  line-height: 1.22;
+  margin-bottom: 8px;
+}
+.side-body { font-size: 10.5px; line-height: 1.72; color: #3e3428; }
+
+/* ── PULL QUOTE ── */
+.pull {
+  border-left: 5px solid var(--saffron);
+  border-right: 5px solid var(--saffron);
+  padding: 18px 24px;
+  margin: 26px 0;
+  text-align: center;
+}
+.pull blockquote {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.35;
+}
+.pull cite {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+}
+
+/* ── THREE COL ── */
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 26px;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+}
+.col-card { border-top: 2px solid var(--ink); padding-top: 11px; }
+.col-hl {
+  font-family: 'DM Serif Display', serif;
+  font-size: 19px;
+  line-height: 1.22;
+  margin-bottom: 8px;
+}
+.col-body { font-size: 10.5px; line-height: 1.75; color: #342e28; }
+
+/* ── OPINION BLOCK ── */
+.opinion {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 22px 26px;
+  margin-bottom: 28px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  align-items: center;
+}
+.op-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  color: var(--saffron);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.op-hl {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(22px, 3vw, 38px);
+  line-height: 0.95;
+  color: var(--yellow);
+  margin-bottom: 10px;
+}
+.op-body { font-size: 11.5px; line-height: 1.82; color: #c4b89a; }
+.op-author { font-size: 8.5px; letter-spacing:0.15em; text-transform:uppercase; color:var(--saffron); margin-top:12px; }
+
+/* ── VIRAL CHART ── */
+.viral {
+  border: 2px solid var(--rule);
+  padding: 18px 20px;
+  margin-bottom: 28px;
+}
+.viral-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 7px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.viral-title span { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); }
+.v-item {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+}
+.v-item:last-child { border-bottom: none; }
+.v-rank { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--saffron); line-height:1; }
+.v-text { font-size: 11.5px; line-height: 1.5; }
+.v-text strong { font-family:'DM Serif Display',serif; font-size:13.5px; display:block; }
+.v-meter { font-size:8.5px; color:var(--muted); text-align:right; white-space:nowrap; }
+.bar { height:3px; background:var(--rule); margin-top:4px; position:relative; }
+.bar-fill { position:absolute; left:0;top:0;height:100%; background:var(--saffron); transition:width 1.2s ease; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 4px double var(--rule);
+  padding: 20px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 9.5px;
+  color: var(--muted);
+  letter-spacing:0.1em;
+}
+.footer-brand { font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--ink); }
+.footer-brand span { color: var(--saffron); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.hero-wrap { animation: fadeUp 0.5s ease both 0.1s; }
+.three-col { animation: fadeUp 0.5s ease both 0.2s; }
+.opinion { animation: fadeUp 0.5s ease both 0.25s; }
+.viral { animation: fadeUp 0.5s ease both 0.3s; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:800px){
+  header{grid-template-columns:1fr;text-align:center;padding:14px 18px 10px}
+  .h-left,.h-right{display:none}
+  main{padding:14px 16px 40px}
+  nav{padding:7px 16px}
+  .hero-wrap{grid-template-columns:1fr}
+  .hero-main{border-right:none;padding-right:0;border-bottom:2px solid var(--rule);padding-bottom:18px;margin-bottom:18px}
+  .hero-side{padding-left:0}
+  .three-col{grid-template-columns:1fr}
+  .opinion{grid-template-columns:1fr}
+  .op-label{writing-mode:horizontal-tb;transform:none;font-size:22px}
+  footer{flex-direction:column;gap:6px;text-align:center;padding:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- FLAG STRIPE -->
+<div class="flag-stripe"></div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner" id="tickerInner"></div>
+</div>
+
+<!-- MASTHEAD -->
+<header>
+  <div class="h-left">
+    <div class="edition-pill">India Edition 🌍</div>
+    <div>Friday, 12 June 2026</div>
+    <div>Vol. I · Issue No. 028</div>
+    <div>Price: 1 Screen Time Report You'll Ignore</div>
+  </div>
+  <div class="masthead-center">
+    <h1>UN<span>SAID</span></h1>
+    <div class="hindi-sub">जो कहा नहीं गया, वो हम कहेंगे</div>
+    <div class="tagline">"The news between the lines, the truth behind the statement."</div>
+  </div>
+  <div class="h-right">
+    <div>Est. 2024</div>
+    <div>Readership: Chronically Online Bharatiyas</div>
+    <div>Bias: Geopolitically Aware & Unapologetic</div>
+    <div>Coverage: Jugaad Journalism™</div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="active">Front Page</a>
+</nav>
+
+<!-- MAIN -->
+<main>
+  <div class="section-label">Today's Dispatches — Friday, 12 June 2026</div>
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <div class="hero-main">
+      <span class="tag tag-saffron">🌧️ MONSOON GHOSTING CRISIS</span>
+      <h2 class="hero-hl">INDIA REFRESHES WEATHER APP EVERY 7 MINUTES.<br>MONSOON SEEN TYPING...</h2>
+      <p class="hero-deck">The monsoon entered India like every toxic situationship ever. It arrived, gave everyone hope, then disappeared without explanation. Farmers are waiting. Cities are waiting. Even those Instagram influencers who bought aesthetic umbrellas are waiting.</p>
+      <div class="body-text">
+        <p>India's economy still depends heavily on rain in 2026. We have AI, satellites, digital payments, and people ordering onions at 3 AM. <strong class="hl">Yet half the country still looks at clouds and says, "Bhai, hopefully."</strong></p>
+        <p>Meteorologists issued a forecast. The forecast was ignored in favour of the group chat uncle who said his knee is hurting, which historically means rain in 48 hours.</p>
+        <p>Weather apps have been refreshed so many times this week that phone batteries are filing formal complaints. One man in Nagpur checked the humidity percentage at 2:14 AM "just to see."</p>
+        <p>The IMD has issued updates. The clouds have issued silence. The farmers have issued prayers. The influencers have issued aesthetic rain content using studio fog machines.</p>
+        <p><strong class="hl">Breaking: Indians now trust weather memes more than weather forecasts.</strong> Sources confirm the meme that said "Monsoon coming bro, trust" has more engagement than the official satellite report.</p>
+      </div>
+      <div class="meme-box">
+        <div class="meme-label">🌧️ UNSAID PERSPECTIVE — SEASONAL RELATIONSHIP STATUS</div>
+        <div class="meme-visual">INDIA'S RELATIONSHIP WITH THE MONSOON:<br><br>Read ✓✓ · Last seen: Entering Kerala · Currently: Typing...</div>
+        <div class="meme-footer">submitted by @unsaid · attachment style: agricultural · hope levels: critically high</div>
+      </div>
+      <div class="article-meta">
+        <span>UNSAID: Half The Country Looking At Clouds And Saying "Bhai, Hopefully"</span>
+        <span class="dot">·</span>
+        <span>By Staff Correspondent @unsaid</span>
+        <span class="dot">·</span>
+        <span>5 min read · 🔥 Trending: Monsoon Watch</span>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="side-card">
+        <span class="tag tag-black">💼 Funding & Feelings</span>
+        <h3 class="side-hl">Indian AI Startup Gets Crores. Fresh Graduates Get Motivational Reels.</h3>
+        <p class="side-body">An Indian space-tech startup secured funding to build AI systems using satellite data. Meanwhile, millions of students are learning that "Congratulations on Graduation" actually means "Now Figure It Out Yourself." Companies are racing to automate jobs while colleges are still teaching PowerPoint transitions like they're military secrets. Sources confirm "Please introduce yourself" remains India's most feared question — more feared than GST notices, more feared than the monsoon leaving, more feared than your manager adding you to a 9 PM WhatsApp group.</p>
+        <div class="article-meta" style="margin-top:8px;">UNSAID: Corporations Are Hiring AI. Humans Are Invited To Attend The Webinar On Upskilling. · @unsaid · 4 min read</div>
+      </div>
+      <div class="side-card">
+        <span class="tag tag-saffron">🚀 Entrepreneurship Report</span>
+        <h3 class="side-hl">India Produces 10 Startups Per Minute And 20 Motivation Podcasts Per Second. Nobody Knows Who's Buying Anything.</h3>
+        <p class="side-body">Every second guy on LinkedIn is building an AI startup, a marketing agency, a personal brand, or all three simultaneously. India doesn't have unemployment. India has 47 lakh CEOs with zero employees. Anonymous investors confirm "disrupting the industry" usually means copying a US startup with Hindi captions. The GST portal has opinions about all of this. The GST portal always has opinions. Nobody consulted the GST portal before becoming an entrepreneur. This was the mistake.</p>
+        <div class="article-meta" style="margin-top:8px;">UNSAID: India Doesn't Have Unemployment. India Has 47 Lakh CEOs With Zero Employees. · @unsaid · 3 min read</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull">
+    <blockquote>"INDIA 2026: AI IS LEARNING FASTER THAN HUMANS, MONSOON IS MORE UNPREDICTABLE THAN RELATIONSHIPS, AND EVERYONE IS BUSY PRETENDING THEY HAVE IT FIGURED OUT."</blockquote>
+    <cite>— UNSAID Editorial Desk · Friday, 12 June 2026 · According to unnamed sources, the country's GDP now stands for Gross Digital Procrastination</cite>
+  </div>
+
+  <!-- THREE COL -->
+  <div class="section-label">Further Dispatches — What Else Was Not Said</div>
+  <div class="three-col">
+    <div class="col-card">
+      <span class="tag tag-black">🧊 Productivity Cult</span>
+      <h3 class="col-hl">Wake Up At 4 AM, Take Ice Bath, Become Millionaire By Tuesday.</h3>
+      <p class="col-body">Social media has reached a point where drinking water is now considered a productivity hack. Every reel: Wake up at 4. Meditate. Journal. Run 10 km. Read 50 pages. Meanwhile normal people are fighting for their lives against the snooze button. If productivity videos actually worked, India would've become Mars by now. The fitness influencer wakes at 4 AM. The fitness influencer is also being paid to wake at 4 AM. These two facts are related and the reel will not mention either of them. The cold plunge tub costs ₹80,000. The insight about discipline is free. This is the business model.</p>
+      <div class="article-meta" style="margin-top:10px;">UNSAID: Nation Buys Ice Tub To Feel Productive. Nation Has Not Left Bed To Use Ice Tub. Nation Is Now Productive About Regretting Ice Tub. · @unsaid · 44K shares</div>
+    </div>
+    <div class="col-card">
+      <span class="tag tag-saffron">📱 The Loneliness Report</span>
+      <h3 class="col-hl">Generation That Can Video Call Anyone Cannot Find One Person To Talk To.</h3>
+      <p class="col-body">We have WhatsApp, Instagram, Telegram, Snapchat, and Discord. Yet everyone's posting: "Nobody understands me." Technology connected devices. It disconnected humans. Experts estimate 90% of modern relationships are screenshots and misunderstandings. The group chat has 47 members and no one replies when you're struggling. But the meme about struggling? 84 reactions in six minutes. Someone screenshot it. The screenshot was sent to another group. That group also did not reply. The notification sound plays either way.</p>
+      <div class="article-meta" style="margin-top:10px;">UNSAID: Man Has 847 Followers. Man Has Not Spoken Out Loud To A Human In Four Days. The Algorithm Is Thriving. · @unsaid · 51K shares</div>
+    </div>
+    <div class="col-card">
+      <span class="tag tag-green">👁️ Attention Economy</span>
+      <h3 class="col-hl">People Would Rather Go Viral Than Go To Therapy.</h3>
+      <p class="col-body">2026 internet rule: Bad news gets 100 likes. Mental breakdown gets 50K views. Public humiliation gets a monetization opportunity. The attention economy has convinced people that being watched is the same as being valued. Spoiler: It's not. A creator posted about their anxiety disorder. It got 2.1M views. The creator is now anxious about maintaining 2.1M views. This is the content cycle. This is also the therapy bill. Both are going up. Only one of them has a brand deal.</p>
+      <div class="article-meta" style="margin-top:10px;">UNSAID: Nation Outsourcing Its Emotional Processing To Strangers Online. Strangers Online Also Need Emotional Processing. Nobody Is Processing. · @unsaid · 62K shares</div>
+    </div>
+  </div>
+
+  <div class="opinion">
+    <div class="op-label">OPINION</div>
+    <div>
+      <div class="op-hl">TODAY'S EDITORIAL: NATION SPENDS 8 HOURS LOOKING AT SCREEN<br>TO ESCAPE PROBLEMS CREATED BY LOOKING AT SCREEN.</div>
+      <p class="op-body">Every problem now starts and ends on a phone: anxiety, relationships, news, shopping, entertainment. We don't have free time anymore. We have loading time. The average Indian checks their phone hundreds of times daily but still says: "Yaar, time hi nahi milta." Sources reveal phone battery receives more care than mental health. The charger is kept on the bedside table. The therapist's number was saved once and never called. The phone has a screen protector. The mental health does not have a screen protector. The phone is doing better. In this Friday edition of the country, everything is connected — the monsoon to the farmers, the LinkedIn post to the firing, the cold plunge tub to the self-doubt, the screen to the loneliness — and none of it is being talked about directly. Just posted. Shared. Screenshot. Sent to another group. That group also did not reply. India, in its infinite scroll, continues. The phone battery is at 12%. This is a metaphor. The phone does not know it is a metaphor. The phone is asking you to plug it in. You should also plug yourself in.</p>
+      <div class="op-author">— UNSAID Editorial Desk · Friday, 12 June 2026 · Opinions expressed are the ones nobody put in a press release</div>
+    </div>
+  </div>
+
+  <!-- VIRAL CHART -->
+  <div class="viral">
+    <div class="viral-title">
+      TODAY'S RATIO REPORT: FRIDAY EDITION
+      <span>Updated: Every time someone refreshes the weather app</span>
+    </div>
+
+    <div class="v-item">
+      <div class="v-rank">1</div>
+      <div class="v-text">
+        <strong>India Refreshes Weather App Every 7 Minutes. Monsoon Seen Typing. Nation Has Not Moved On.</strong>
+        The weather app has been pulled down to refresh 847 million times this week across the country. The gesture is the same each time: the small hopeful circle, the brief loading pause, the same temperature. The clouds have not read the national mood. The clouds are on their own timeline. The clouds are, in this sense, doing exactly what they want. India calls this the monsoon. Therapists call this something else.
+      </div>
+      <div class="v-meter">
+        9.4M views
+        <div class="bar"><div class="bar-fill" style="width:0" data-w="97%"></div></div>
+        ratio: agriculturally invested
+      </div>
+    </div>
+
+    <div class="v-item">
+      <div class="v-rank">2</div>
+      <div class="v-text">
+        <strong>AI Startup Gets Crores. Fresh Graduate Gets "Keep Going, You're Doing Amazing." Both Are Trying To Survive.</strong>
+        The funding announcement came with a press release about "transforming the future of intelligence." The graduate's rejection email said "we'll keep your profile on file." The investor's cheque had seven zeros. The graduate's bank account had two. A motivational reel told the graduate that Ambani also started somewhere. The reel did not specify where Ambani's parents started. The reel had 4.2M views. The graduate watched it twice. The graduate is still figuring it out. So, it turns out, is the AI startup. Neither will admit this publicly.
+      </div>
+      <div class="v-meter">
+        6.1M views
+        <div class="bar"><div class="bar-fill" style="width:0" data-w="76%"></div></div>
+        ratio: optimistically unemployed
+      </div>
+    </div>
+
+    <div class="v-item">
+      <div class="v-rank">3</div>
+      <div class="v-text">
+        <strong>47 Lakh LinkedIn CEOs Currently Disrupting The Industry. Industry Has Not Noticed. Industry Is In A Meeting.</strong>
+        The industry will emerge from the meeting at 6:30 PM. The industry will then have another meeting. The 47 lakh CEOs will post about hustle culture while the meeting happens. Three of the CEOs are in the meeting. Seven of them are posting about not being in meetings as a lifestyle. The GST portal is aware of all 47 lakh. The GST portal has questions. Nobody who made a motivational reel has answered the GST portal's questions. This is the gap in the ecosystem. This is the real disruption opportunity.
+      </div>
+      <div class="v-meter">
+        4.3M views
+        <div class="bar"><div class="bar-fill" style="width:0" data-w="58%"></div></div>
+        ratio: founder-pilled
+      </div>
+    </div>
+
+    <div class="v-item">
+      <div class="v-rank">4</div>
+      <div class="v-text">
+        <strong>Person Checks Phone 247 Times. Person Says "I Have No Time." Both Statements Are True. Neither Is Being Examined.</strong>
+        The phone was checked at 11:47 PM for no reason. It was checked again at 11:49 PM to see if anything had changed since 11:47 PM. Nothing had changed. The checking continued. At 1:14 AM the person posted "Need to get off my phone" and got 312 likes from other people who were also on their phones at 1:14 AM. The post became the reason to stay on the phone for another 40 minutes. The phone battery died at 2:02 AM. The person felt briefly free. The person plugged in the charger. The freedom lasted 11 seconds.
+      </div>
+      <div class="v-meter">
+        2.9M views
+        <div class="bar"><div class="bar-fill" style="width:0" data-w="41%"></div></div>
+        ratio: chronically online
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">UN<span>SAID</span></div>
+  <div>© 2026 · All Subtext Reserved · Jugaad Journalism™</div>
+  <div>unsaid.wtf · Made in 🇮🇳 with no sleep and deep concern</div>
+</footer>
+
+<script>
+const TICKER_ITEMS = [
+  "🌧️ BREAKING: Monsoon enters India, gives hope, disappears without explanation. Nation still has read receipts on. Monsoon has not replied.",
+  "💼 Indian AI startup secures crores in funding. Fresh graduates secure motivational reels. Both are told this is a great opportunity.",
+  "🚀 47 lakh LinkedIn CEOs currently disrupting the industry. Industry is in a meeting. Industry will emerge at 6:30 PM.",
+  "🧊 Fitness influencer posts 4 AM wake-up routine. Ice bath costs ₹80,000. Discipline is free. The business model is neither.",
+  "📱 Generation with 5 messaging apps posts 'nobody understands me.' 312 people liked the post. None of them texted.",
+  "👁️ Man goes viral for mental breakdown. Now anxious about maintaining virality of mental breakdown. Content cycle complete.",
+  "📵 Nation spends 8 hours on screen to escape problems created by 8 hours on screen. Phone battery at 12%. This is a metaphor.",
+  "🌧️ Weather app refreshed 847 million times this week. Temperature unchanged. Hope: unchanged. Uncle's knee says rain in 48 hours.",
+  "💼 'Please introduce yourself' remains India's most feared question. More feared than GST notices. More feared than the monsoon ghosting.",
+  "📊 India 2026: GDP now stands for Gross Digital Procrastination. Unnamed sources confirm. Nation refreshes page to see if it changed.",
+];
+
+const all = [...TICKER_ITEMS, ...TICKER_ITEMS];
+document.getElementById('tickerInner').innerHTML = all.map(t => `<span>${t}</span>`).join('');
+
+setTimeout(() => {
+  document.querySelectorAll('.bar-fill').forEach(el => {
+    el.style.width = el.dataset.w;
+  });
+}, 600);
+</script>
+</body>
+</html>
