@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNSAID — Sunday Special 🇮🇳 · June 14 · Sunday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d0d0d;
+  --paper: #f4efe3;
+  --saffron: #FF6B00;
+  --green: #138808;
+  --yellow: #FFC300;
+  --cream: #fdf8ee;
+  --muted: #7a6e60;
+  --rule: #c4b89a;
+  --white: #fff;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Space Mono', monospace;
+  overflow-x: hidden;
+}
+
+/* grain */
+body::after {
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;
+}
+
+/* ── TICKER ── */
+.ticker {
+  background: var(--saffron);
+  color: var(--white);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px 0;
+  border-bottom: 2px solid var(--ink);
+}
+.ticker-inner { display:inline-block; animation: tick 60s linear infinite; }
+.ticker-inner span { margin: 0 36px; }
+@keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── FLAG STRIPE ── */
+.flag-stripe {
+  height: 5px;
+  background: linear-gradient(to right, #FF9933 33.33%, #fff 33.33% 66.66%, #138808 66.66%);
+}
+
+/* ── MASTHEAD ── */
+header {
+  border-bottom: 4px double var(--rule);
+  padding: 20px 36px 14px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 8px;
+}
+.h-left, .h-right {
+  font-size: 9.5px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 2;
+}
+.h-right { text-align: right; }
+.masthead-center { text-align: center; }
+.masthead-center h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(44px, 7.5vw, 100px);
+  line-height: 0.88;
+  letter-spacing: 1px;
+}
+.masthead-center h1 span { color: var(--saffron); }
+.masthead-center .hindi-sub {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+.masthead-center .tagline {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.edition-pill {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--yellow);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* ── NAV ── */
+nav {
+  border-bottom: 2px solid var(--rule);
+  padding: 7px 36px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+nav::-webkit-scrollbar{display:none}
+nav a {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 14px;
+  border-right: 1px solid var(--rule);
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+nav a:first-child{border-left:1px solid var(--rule)}
+nav a:hover, nav a.active{background:var(--ink);color:var(--yellow)}
+
+/* ── MAIN ── */
+main { max-width: 1300px; margin: 0 auto; padding: 22px 36px 60px; }
+
+.section-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-top: 3px solid var(--ink);
+  padding-top: 5px;
+  margin-bottom: 18px;
+}
+
+/* ── SUNDAY SPECIAL BANNER ── */
+.sunday-banner {
+  background: var(--ink);
+  color: var(--yellow);
+  text-align: center;
+  padding: 18px 24px;
+  margin-bottom: 24px;
+  border: 3px solid var(--saffron);
+}
+.sunday-banner .sunday-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 6px;
+}
+.sunday-banner .sunday-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 6vw, 88px);
+  line-height: 0.88;
+  letter-spacing: 2px;
+  color: var(--yellow);
+}
+.sunday-banner .sunday-sub {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(13px, 2vw, 20px);
+  color: var(--paper);
+  margin-top: 8px;
+}
+.sunday-banner .sunday-note {
+  font-size: 9px;
+  color: #888;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+/* ── TAG ── */
+.tag {
+  display: inline-block;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 2px 9px;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+.tag-black { background: var(--ink); color: var(--yellow); }
+.tag-saffron { background: var(--saffron); color: white; }
+.tag-green { background: var(--green); color: white; }
+.tag-outline { border: 1.5px solid var(--ink); color: var(--ink); }
+
+/* ── HERO ── */
+.hero-wrap {
+  display: grid;
+  grid-template-columns: 1.9fr 1fr;
+  gap: 0;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 26px;
+  margin-bottom: 28px;
+}
+.hero-main { border-right: 2px solid var(--rule); padding-right: 28px; }
+.hero-side { padding-left: 26px; display: flex; flex-direction: column; gap: 22px; }
+
+.hero-hl {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(30px, 4.2vw, 64px);
+  line-height: 0.92;
+  margin-bottom: 10px;
+}
+.hero-deck {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.45;
+  border-left: 3px solid var(--saffron);
+  padding-left: 12px;
+  margin-bottom: 14px;
+  color: #2a2420;
+}
+.body-text {
+  font-size: 11.5px;
+  line-height: 1.85;
+  color: #2e2820;
+}
+.body-text p { margin-bottom: 10px; }
+.hl { background: var(--yellow); padding: 0 3px; font-weight: 700; }
+
+.article-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-top: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.dot { color: var(--rule); }
+
+/* ── MEME BOX ── */
+.meme-box {
+  background: var(--ink);
+  padding: 14px;
+  margin: 16px 0;
+  color: var(--yellow);
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+}
+.meme-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  color: #888;
+  letter-spacing: 0.2em;
+  margin-bottom: 6px;
+}
+.meme-visual {
+  background: #181818;
+  border: 1px dashed #444;
+  padding: 18px 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: 'Space Mono', monospace;
+  color: var(--yellow);
+}
+.meme-footer { font-size: 9px; color: #666; font-family:'Space Mono',monospace; margin-top:6px; }
+
+/* ── DIVIDER RULE ── */
+.divider-rule {
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.divider-rule::before, .divider-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* ── SIDE CARD ── */
+.side-card { border-top: 2px solid var(--rule); padding-top: 14px; }
+.side-hl {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  line-height: 1.22;
+  margin-bottom: 8px;
+}
+.side-body { font-size: 10.5px; line-height: 1.72; color: #3e3428; }
+
+/* ── PULL QUOTE ── */
+.pull {
+  border-left: 5px solid var(--saffron);
+  border-right: 5px solid var(--saffron);
+  padding: 18px 24px;
+  margin: 26px 0;
+  text-align: center;
+}
+.pull blockquote {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.35;
+}
+.pull cite {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+}
+
+/* ── THREE COL ── */
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 26px;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+}
+.col-card { border-top: 2px solid var(--ink); padding-top: 11px; }
+.col-hl {
+  font-family: 'DM Serif Display', serif;
+  font-size: 19px;
+  line-height: 1.22;
+  margin-bottom: 8px;
+}
+.col-body { font-size: 10.5px; line-height: 1.75; color: #342e28; }
+
+/* ── OPINION BLOCK ── */
+.opinion {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 22px 26px;
+  margin-bottom: 28px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  align-items: center;
+}
+.op-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  color: var(--saffron);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.op-hl {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(22px, 3vw, 38px);
+  line-height: 0.95;
+  color: var(--yellow);
+  margin-bottom: 10px;
+}
+.op-body { font-size: 11.5px; line-height: 1.82; color: #c4b89a; }
+.op-author { font-size: 8.5px; letter-spacing:0.15em; text-transform:uppercase; color:var(--saffron); margin-top:12px; }
+
+/* ── STAT STRIP ── */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 2px solid var(--ink);
+  margin-bottom: 28px;
+}
+.stat-item {
+  padding: 16px 18px;
+  border-right: 2px solid var(--ink);
+  text-align: center;
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  color: var(--saffron);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 8.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* ── VIRAL CHART ── */
+.viral {
+  border: 2px solid var(--rule);
+  padding: 18px 20px;
+  margin-bottom: 28px;
+}
+.viral-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 7px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.viral-title span { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); }
+.v-item {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+}
+.v-item:last-child { border-bottom: none; }
+.v-rank { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--saffron); line-height:1; }
+.v-text { font-size: 11.5px; line-height: 1.5; }
+.v-text strong { font-family:'DM Serif Display',serif; font-size:13.5px; display:block; }
+.v-meter { font-size:8.5px; color:var(--muted); text-align:right; white-space:nowrap; }
+.bar { height:3px; background:var(--rule); margin-top:4px; position:relative; }
+.bar-fill { position:absolute; left:0;top:0;height:100%; background:var(--saffron); transition:width 1.2s ease; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 4px double var(--rule);
+  padding: 20px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 9.5px;
+  color: var(--muted);
+  letter-spacing:0.1em;
+}
+.footer-brand { font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--ink); }
+.footer-brand span { color: var(--saffron); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.sunday-banner { animation: fadeUp 0.4s ease both 0.05s; }
+.hero-wrap { animation: fadeUp 0.5s ease both 0.1s; }
+.stat-strip { animation: fadeUp 0.5s ease both 0.15s; }
+.three-col { animation: fadeUp 0.5s ease both 0.2s; }
+.opinion { animation: fadeUp 0.5s ease both 0.25s; }
+.viral { animation: fadeUp 0.5s ease both 0.3s; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:800px){
+  header{grid-template-columns:1fr;text-align:center;padding:14px 18px 10px}
+  .h-left,.h-right{display:none}
+  main{padding:14px 16px 40px}
+  nav{padding:7px 16px}
+  .hero-wrap{grid-template-columns:1fr}
+  .hero-main{border-right:none;padding-right:0;border-bottom:2px solid var(--rule);padding-bottom:18px;margin-bottom:18px}
+  .hero-side{padding-left:0}
+  .three-col{grid-template-columns:1fr}
+  .stat-strip{grid-template-columns:repeat(2,1fr)}
+  .stat-item{border-bottom:2px solid var(--ink)}
+  .opinion{grid-template-columns:1fr}
+  .op-label{writing-mode:horizontal-tb;transform:none;font-size:22px}
+  footer{flex-direction:column;gap:6px;text-align:center;padding:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- FLAG STRIPE -->
+<div class="flag-stripe"></div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner" id="tickerInner"></div>
+</div>
+
+<!-- MASTHEAD -->
+<header>
+  <div class="h-left">
+    <div class="edition-pill">☀️ Sunday Special</div>
+    <div>Sunday, 14 June 2026</div>
+    <div>Vol. I · Issue No. 029</div>
+    <div>Price: 72 Hours Of Manufactured Patriotism</div>
+  </div>
+  <div class="masthead-center">
+    <h1>UN<span>SAID</span></h1>
+    <div class="hindi-sub">जो कहा नहीं गया, वो हम कहेंगे</div>
+    <div class="tagline">"The news between the lines, the truth behind the statement."</div>
+  </div>
+  <div class="h-right">
+    <div>Est. 2024</div>
+    <div>Readership: Chronically Online Bharatiyas</div>
+    <div>Bias: Geopolitically Aware & Unapologetic</div>
+    <div>Coverage: Jugaad Journalism™</div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="active">Sunday Special</a>
+  <a href="#">Sports</a>
+  <a href="#">Culture</a>
+  <a href="#">Opinion</a>
+  <a href="#">Ratio Report</a>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+  <!-- SUNDAY SPECIAL BANNER -->
+  <div class="sunday-banner">
+    <div class="sunday-eyebrow">☀️ Sunday Special · 14 June 2026 · Long Read Edition</div>
+    <div class="sunday-title">INDIA DOESN'T LOVE SPORTS.<br>INDIA LOVES CRICKET.</div>
+    <div class="sunday-sub">And no, those are not the same thing. Not even close. Not even in the same paragraph.</div>
+    <div class="sunday-note">UNSAID · Sports · The thing nobody on primetime will say out loud · @unsaid</div>
+  </div>
+
+  <div class="section-label">Sunday Deep Dive — Sports, Systems & The 72-Hour Nation · 14 June 2026</div>
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <div class="hero-main">
+      <span class="tag tag-black">🏏 THE INCONVENIENT SPORTS REPORT</span>
+      <h2 class="hero-hl">EVERY FEW YEARS, INDIA SUDDENLY REMEMBERS OTHER SPORTS EXIST.<br>THEN THE IPL STARTS AND EVERYONE MOVES ON.</h2>
+      <p class="hero-deck">When an athlete wins an Olympic medal, India becomes a deeply knowledgeable expert in that sport. For approximately 72 hours. Then everybody goes back to discussing net run rate. Like clockwork. Like a very patriotic alarm that snoozes itself automatically.</p>
+      <div class="body-text">
+        <p>Let's conduct a simple experiment. Ask an average Indian who Virat Kohli is. You will receive a biography. Childhood. Stats. Century count. His fitness philosophy. His Instagram follower trajectory. The shape of his beard in 2016 versus 2019. Unsolicited.</p>
+        <p>Ask them who PV Sindhu is. Maybe. Depends on whether the Olympics was recent and whether a news anchor was crying on television at the time.</p>
+        <p>Ask them who Satwik and Chirag are. Silence. Then: <strong class="hl">"Are they cricketers?"</strong> No. They are not. They are the world's No. 1 doubles badminton pair. India produces them. India cannot name them.</p>
+        <p>Ask them to name five Indian athletes outside cricket. The buffering symbol appears. Estimated output after 45 seconds: Saina Nehwal, Sania Mirza, and three guesses that are actually IPL players who "definitely seem athletic."</p>
+        <p>Ask them who won India's last Olympic gold before Neeraj Chopra. Complete system shutdown. One person will say Dhoni. Another will say Sachin. <strong class="hl">Both of these people vote regularly.</strong> The answer is Abhinav Bindra. 2008 Beijing. The only individual Olympic gold India had won until 2021. Bindra himself said he felt invisible after the moment faded. The man won the single greatest individual achievement in Indian Olympic history and got about the same media shelf life as a reality show elimination. Then the IPL started and everyone moved on.</p>
+      </div>
+
+      <div class="meme-box">
+        <div class="meme-label">📊 UNSAID PERSPECTIVE — INDIA'S SPORTS AWARENESS CYCLE</div>
+        <div class="meme-visual">INDIA DISCOVERS A SPORT:<br><br>Day 1: "WE ARE SO PROUD 🇮🇳🔥"<br>Day 2: "THIS SPORT IS IN OUR BLOOD"<br>Day 3: Deep analysis. Memes. Panel debates.<br>Day 4: "Anyway, IPL tonight at 7:30."<br><br>Repeat every 4 years. Warranty not included.</div>
+        <div class="meme-footer">submitted by @unsaid · cycle duration: 72 hours · next cycle: paris 2028 · hope: pending</div>
+      </div>
+
+      <div class="body-text">
+        <p>The uncomfortable truth isn't that India loves cricket. Cricket is brilliant. The uncomfortable truth is that <strong class="hl">India has confused having a cricket culture with having a sports culture.</strong> These are not the same sentence. They are not even in the same paragraph.</p>
+        <p>Countries with real sports cultures build systems. Academies. Coaching pipelines. Infrastructure in tier-2 cities where actual talent lives. Career paths that don't require winning a medal just to afford next month's training fees. India builds celebrities. Then forgets they exist. This is not a sports culture. This is a sports cameo.</p>
+        <p>Now imagine being a young Indian athlete in a non-cricket sport. Actually imagine it. You wake up at 4:30 AM because your training window is before the facility gets priority-booked by the cricket academy. You train on equipment that developed countries retired a decade ago. You travel to competitions in second-class rail berths because the federation's reimbursement policy was last updated when Vajpayee was in office.</p>
+        <p>You fight injuries without medical support. You fight selection politics where who you know beats what you can do. Then you watch a substitute IPL player — someone sitting in the dugout, not playing a single ball — earn more brand sponsorship in one tournament than your entire career prize money. <strong class="hl">Watch that player's net session get more television coverage than your national championship final.</strong> Watch a cricketer's haircut become a national talking point while your world ranking improvement goes completely unnoticed. That requires a level of psychological fortitude we have no word for in any Indian language. Because we never had to name it. We were too busy naming cricket shots after batsmen.</p>
+      </div>
+
+      <div class="article-meta">
+        <span>UNSAID: India Celebrates Champions. Sporting Nations Create Them.</span>
+        <span class="dot">·</span>
+        <span>By The Editorial Desk @unsaid</span>
+        <span class="dot">·</span>
+        <span>12 min read · ☀️ Sunday Special · 🔥 Long Read</span>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="side-card">
+        <span class="tag tag-saffron">🥇 The Bindra Paradox</span>
+        <h3 class="side-hl">India's Only Individual Olympic Gold For 13 Years Got Less Shelf Life Than A Reality Show Elimination.</h3>
+        <p class="side-body">Abhinav Bindra won India's first-ever individual Olympic gold in 2008 at Beijing. He shot a 10.8 in the final round. The nation erupted. Channels ran specials. Then the IPL started. Bindra later said he felt invisible after the moment faded. The man delivered the single greatest individual achievement in Indian Olympic history. His medal shelf life: approximately 11 days. A dropped catch in a T20 gets more airtime per week than Bindra got in a year. This is not a coincidence. This is a policy.</p>
+        <div class="article-meta" style="margin-top:8px;">UNSAID: The 72-Hour Nation Gave Its Greatest Champion 11 Days. The Algorithm Was Busy. · @unsaid · 4 min read</div>
+      </div>
+
+      <div class="side-card">
+        <span class="tag tag-green">🏸 The Gopichand Problem</span>
+        <h3 class="side-hl">India's Best Badminton Coach Built His Academy With Personal Money Because The Institutions Were Unavailable At The Scale Needed.</h3>
+        <p class="side-body">Pullela Gopichand built the Gopichand Badminton Academy largely through personal investment and hard-scraped sponsorships because institutional support wasn't available at the scale required. Out of this academy came PV Sindhu, Saina Nehwal, Kidambi Srikanth — names India now claims with great pride and minimal financial assistance. The nation is good at claiming credit. The nation is less good at writing cheques before the medals arrive. Gopichand understood this. He wrote his own cheques. India took the trophy photos.</p>
+        <div class="article-meta" style="margin-top:8px;">UNSAID: System Produces Nothing. Individual Builds Academy. Nation Claims System Works. · @unsaid · 3 min read</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE 1 -->
+  <div class="pull">
+    <blockquote>"EVERY FOUR YEARS, WITH THE PRECISION OF A MOON CYCLE AND SIGNIFICANTLY LESS POETRY, INDIA ASKS: WHY DON'T WE WIN MORE MEDALS? THE ANSWER IS NOT ENCRYPTED. IT'S SITTING IN EVERY BUDGET DECISION MADE FOR THE PREVIOUS FOUR YEARS."</blockquote>
+    <cite>— UNSAID Editorial Desk · Sunday, 14 June 2026 · The question arrives in August, peaks at the closing ceremony, and disappears before September</cite>
+  </div>
+
+  <!-- STAT STRIP -->
+  <div class="stat-strip">
+    <div class="stat-item">
+      <div class="stat-num">72</div>
+      <div class="stat-label">Hours India Stays Interested In A Non-Cricket Sport After Medal Win</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">13</div>
+      <div class="stat-label">Years Between India's First & Second Individual Olympic Golds (2008–2021)</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1.4B</div>
+      <div class="stat-label">Population. Jamaica Has 3 Million People & More Sprint Medals Than India Has In All Sports.</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0</div>
+      <div class="stat-label">Panel Debates On Satwik-Chirag's World No.1 Ranking On Any Channel Above 50K Viewership</div>
+    </div>
+  </div>
+
+  <!-- THREE COL -->
+  <div class="section-label">Three Things India Is Getting Wrong While The Nation Watches IPL Highlights</div>
+  <div class="three-col">
+    <div class="col-card">
+      <span class="tag tag-black">🧮 The Jamaica Equation</span>
+      <h3 class="col-hl">Jamaica Has Fewer People Than Mumbai. They've Won More Olympic Sprint Medals Than India Has In All Sports Combined.</h3>
+      <p class="col-body">Jamaica's population is roughly 3 million. Mumbai alone has 20 million. Jamaica has produced Usain Bolt, Shelly-Ann Fraser-Pryce, Elaine Thompson-Herah, and a generation of world-beaters in sprinting. They didn't do it through nationalism. They didn't do it through trending hashtags with the national flag. They did it through a system built over decades — schools, clubs, coaches, culture. The math is not complicated. The commitment required apparently is. India has the numbers. India is missing the system. Medals are manufactured by investment and infrastructure, not by holding your breath during the relay and updating your Instagram bio to the tricolour for two weeks.</p>
+      <div class="article-meta" style="margin-top:10px;">UNSAID: Nation Has 1.4 Billion People And Cannot Field A Competitive 4x100 Relay Team. Nation Has Opinions About This. Nation Will Not Fund This. · @unsaid · 48K shares</div>
+    </div>
+    <div class="col-card">
+      <span class="tag tag-saffron">📺 The Broadcast Problem</span>
+      <h3 class="col-hl">Indians Don't Dislike Other Sports. Nobody Has Ever Shown Them Why They Should Care — With Production Value, Context, And Story.</h3>
+      <p class="col-body">The reason Indian chess, wrestling, and boxing aren't dinner table conversations isn't that Indians are genetically wired for cricket. It's that nobody has consistently built a broadcast narrative around them. Cricket didn't get dominant by accident. Decades of broadcast investment, commentary culture, and storytelling made it feel essential to identity. The Pro Kabaddi League proved the audience exists — when you produce a sport like it deserves to be produced, people watch. Kabaddi. A sport that was literally a village game. Prime time. Sold out arenas. That's not an accident. That's a production decision. The audience is there. Nobody is making the show. Cricket's next match is in three days. That's a more convenient timeline than a five-year investment in building a new sporting audience from scratch.</p>
+      <div class="article-meta" style="margin-top:10px;">UNSAID: Pro Kabaddi Proved Indians Watch Any Sport If You Treat It Like It Matters. Channels Took Notes. Then Aired More Cricket. · @unsaid · 61K shares</div>
+    </div>
+    <div class="col-card">
+      <span class="tag tag-green">💪 The Grit Costume</span>
+      <h3 class="col-hl">India Calls Athlete Struggle "Resilience." Actual Name: Institutional Failure Wearing An Inspirational Costume.</h3>
+      <p class="col-body">The Indian hockey team's first Olympic medal in 41 years happened not because infrastructure suddenly improved — but because a generation of players refused to let the sport die on their watch. PV Sindhu became world champion while Indian television ran a panel debate about a dropped catch in a T20. These athletes climbed mountains while the spotlight was pointed somewhere else. They climbed anyway. We called it grit. We called it resilience. We turned it into motivational content. We made the struggle seem like part of the journey rather than something we simply chose not to fix. This is not inspiration. This is systemic neglect dressed up in tricolour packaging and sold as a success story. We have gotten very comfortable celebrating people for surviving our own indifference.</p>
+      <div class="article-meta" style="margin-top:10px;">UNSAID: Nation Celebrates Athletes For Overcoming A System The Nation Built And Chose Not To Improve. Nation Calls This Pride. · @unsaid · 74K shares</div>
+    </div>
+  </div>
+
+  <!-- OPINION BLOCK -->
+  <div class="opinion">
+    <div class="op-label">OPINION</div>
+    <div>
+      <div class="op-hl">TODAY'S EDITORIAL: MEDALS ARE NOT MANUFACTURED BY PATRIOTISM TWEETS.<br>THEY ARE MANUFACTURED BY INVESTMENT — BEFORE THE MEDAL EXISTS.</div>
+      <p class="op-body">Every four years, the question returns with the precision of a moon cycle and significantly less poetry: "Why don't we win more Olympic medals?" This question arrives in August. It peaks during the closing ceremony. It disappears before September. As though the answer is encrypted somewhere — not sitting in plain sight in every decision made about sports investment for the previous four years.</p>
+      <p class="op-body" style="margin-top:10px;">The next Olympic champion is probably training right now. In a village nobody has heard of. Travelling six hours daily for practice. On a budget that makes their eventual achievement three times more impressive than it would be anywhere else. They will win. Because extraordinary people find ways to be extraordinary regardless of what surrounds them. And when they do, India will trend for 72 hours. Memes will be made. The Prime Minister will tweet. Brands will call. Then it will be over. And the next athlete — younger, still unknown, still underfunded — will continue training in the silence that follows every medal's fifteen minutes. Waiting for their 72 hours. The difference between India and a real sporting nation is not talent. It's not population. It's not passion. It's this: <strong style="color:var(--yellow)">sporting nations care about athletes before they win. Not during. Not after. Before. When it's inconvenient. When there's no medal to celebrate yet. When supporting someone means funding a dream with no guaranteed return.</strong> India is very good at guaranteed returns. India is less comfortable with uncertain investments in human potential. Until that changes, the question will keep returning. Right on schedule. Right before it disappears again.</p>
+      <div class="op-author">— UNSAID Editorial Desk · Sunday, 14 June 2026 · India celebrates champions. Sporting nations create them. These are not the same sentence.</div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE 2 -->
+  <div class="pull">
+    <blockquote>"INDIA CELEBRATES CHAMPIONS. SPORTING NATIONS CREATE THEM. THE DIFFERENCE BETWEEN THOSE TWO SENTENCES IS THE DIFFERENCE BETWEEN A SPECTATOR AND A SYSTEM."</blockquote>
+    <cite>— UNSAID · Sunday Special · 14 June 2026 · Sources confirm 90% of Indians discover new sports only after someone wins a medal in them. That's not a sports culture. That's a sports cameo.</cite>
+  </div>
+
+  <!-- VIRAL CHART -->
+  <div class="viral">
+    <div class="viral-title">
+      TODAY'S RATIO REPORT: SUNDAY SPORTS EDITION
+      <span>Updated: Every time someone googles "Indian hockey" during non-Olympics years</span>
+    </div>
+
+    <div class="v-item">
+      <div class="v-rank">1</div>
+      <div class="v-text">
+        <strong>India Asks "Why No Olympic Medals?" Every August. Stops Asking By September. Medal Pipeline Mysteriously Empty.</strong>
+        The question arrives with clockwork precision every four years. It trends. It gets panel debates. Former cricketers are invited to give opinions on sports they don't play. Graphics are made. Hashtags are formed. The closing ceremony ends. The question is filed under "national mood, temporary." The sports ministry budget remains what it was. The training facilities remain what they were. The question will return in four years. The answer, unchanged, will be waiting.
+      </div>
+      <div class="v-meter">
+        11.2M views
+        <div class="bar"><div class="bar-fill" style="width:0" data-w="100%"></div></div>
+        ratio: quadrennially devastated
+      </div>
+    </div>
+
+    <div class="v-item">
+      <div class="v-rank">2</div>
+      <div class="v-text">
+        <strong>IPL Dugout Player Earns More Brand Deals In One Tournament Than Satwik-Chirag's Combined Career Prize Money. Nation Knows Dugout Player's Name.</strong>
+        The dugout player did not face a single ball this season. The dugout player has 4.2 million Instagram followers. The dugout player was recently in an ad for a fantasy sports app, a cold drink, and a financial product that may or may not be a Ponzi scheme. Satwik Rankireddy and Chirag Shetty are the world's number one men's doubles badminton pair. They have represented India at the highest level on earth. Three people in a studio audience can spell their surnames correctly. This is not a complaint. This is a data point.
+      </div>
+      <div class="v-meter">
+        7.8M views
+        <div class="bar"><div class="bar-fill" style="width:0" data-w="74%"></div></div>
+        ratio: athletically illiterate
+      </div>
+    </div>
+
+    <div class="v-item">
+      <div class="v-rank">3</div>
+      <div class="v-text">
+        <strong>Indian Chess Players Becoming World Champions Younger Than Ever. Zero Panel Discussions On Any Channel With Viewership Above 50,000.</strong>
+        Dommaraju Gukesh became world chess champion at 18. India has a generation of chess prodigies currently breaking every age record in the sport's history. Indian wrestlers are qualifying for major championships. Indian boxers are breaking into global top rankings. None of this is a panel discussion. A dropped catch in a T20 gets a panel discussion. The dropped catch gets more combined airtime in one week than Indian chess gets in a year. The dropped catch player has more Instagram followers than the world champion. The world champion is doing fine. The priorities are not.
+      </div>
+      <div class="v-meter">
+        5.3M views
+        <div class="bar"><div class="bar-fill" style="width:0" data-w="52%"></div></div>
+        ratio: strategically ignored
+      </div>
+    </div>
+
+    <div class="v-item">
+      <div class="v-rank">4</div>
+      <div class="v-text">
+        <strong>Athlete Wakes At 4:30 AM To Train Before Cricket Academy Books The Facility. Nation Wakes At 4:30 AM To Watch IPL In Australia. Both Are Committed. Only One Is Funded.</strong>
+        The training window exists before dawn because priority booking goes to cricket. The equipment is a decade old because the budget went elsewhere. The federation's travel reimbursement policy was last updated when a different government was in power. The athlete trains anyway. Not because the system supports them. Because they have decided to be extraordinary in spite of it. India will call this resilience. India will make a short documentary about it. India will share the short documentary without reading the funding credits. The funding credits will not include the government. This is fine. This is the system. The system is working exactly as designed.
+      </div>
+      <div class="v-meter">
+        3.4M views
+        <div class="bar"><div class="bar-fill" style="width:0" data-w="34%"></div></div>
+        ratio: systemically unsupported
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">UN<span>SAID</span></div>
+  <div>© 2026 · Sunday Special · All Subtext Reserved · Jugaad Journalism™</div>
+  <div>unsaid.wtf · Made in 🇮🇳 with no sleep and deep concern for non-cricket athletes</div>
+</footer>
+
+<script>
+const TICKER_ITEMS = [
+  "🏅 BREAKING: India discovers badminton exists. Satwik-Chirag ranked No.1 in world. Nation currently distracted by IPL net session coverage.",
+  "🏏 Dugout IPL player who batted 0 balls this season has more brand deals than India's Olympic medal winners combined. Sources: unsurprised.",
+  "🥊 Indian boxer enters world top 5 rankings. Zero panel discussions held. A dropped catch in T20 got six episodes. Priorities: confirmed.",
+  "🎯 Abhinav Bindra won India's first individual Olympic gold in 2008. Nation celebrated for 11 days. Then IPL started. Bindra who?",
+  "♟️ Gukesh becomes world chess champion at 18. Nation's response: 72 hours of pride. Nation's follow-up response: what's the RCB score?",
+  "🏸 PV Sindhu became world champion while Indian TV ran panel debate about a dropped catch. Sindhu: did not wait for panel's permission.",
+  "🏑 Indian hockey team's first Olympic medal in 41 years. Half the anchors had to google what a drag flick is. One anchor called it a 'power shot.' We move on.",
+  "🌍 Jamaica has 3 million people and more Olympic sprint medals than India has in all sports. Jamaica did not achieve this via patriotism tweets.",
+  "📺 Pro Kabaddi proved Indians watch any sport if you produce it well. Channels noted this. Then aired three more hours of IPL analysis. Business as usual.",
+  "🎽 India 2026: We have satellites, AI, and UPI. Our non-cricket athletes are still travelling second class to national championships. Jugaad is not a sports policy.",
+];
+
+const all = [...TICKER_ITEMS, ...TICKER_ITEMS];
+document.getElementById('tickerInner').innerHTML = all.map(t => `<span>${t}</span>`).join('');
+
+setTimeout(() => {
+  document.querySelectorAll('.bar-fill').forEach(el => {
+    el.style.width = el.dataset.w;
+  });
+}, 600);
+</script>
+</body>
+</html>
