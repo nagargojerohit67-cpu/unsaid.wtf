@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNSAID — Monday Edition 🇮🇳 · June 15 · Monday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d0d0d;
+  --paper: #f4efe3;
+  --saffron: #FF6B00;
+  --green: #138808;
+  --yellow: #FFC300;
+  --cream: #fdf8ee;
+  --muted: #7a6e60;
+  --rule: #c4b89a;
+  --white: #fff;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Space Mono', monospace;
+  overflow-x: hidden;
+}
+
+body::after {
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;
+}
+
+/* ── TICKER ── */
+.ticker {
+  background: var(--saffron);
+  color: var(--white);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px 0;
+  border-bottom: 2px solid var(--ink);
+}
+.ticker-inner { display:inline-block; animation: tick 60s linear infinite; }
+.ticker-inner span { margin: 0 36px; }
+@keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── FLAG STRIPE ── */
+.flag-stripe {
+  height: 5px;
+  background: linear-gradient(to right, #FF9933 33.33%, #fff 33.33% 66.66%, #138808 66.66%);
+}
+
+/* ── MASTHEAD ── */
+header {
+  border-bottom: 4px double var(--rule);
+  padding: 20px 36px 0;
+}
+.masthead-top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 8px;
+  padding-bottom: 14px;
+}
+.h-left, .h-right {
+  font-size: 9.5px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 2;
+}
+.h-right { text-align: right; }
+.masthead-center { text-align: center; }
+.masthead-center h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(44px, 7.5vw, 100px);
+  line-height: 0.88;
+  letter-spacing: 1px;
+}
+.masthead-center h1 span { color: var(--saffron); }
+.masthead-center .hindi-sub {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+.masthead-center .tagline {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.edition-pill {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--yellow);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* ── UNSAID TRUTHS COLUMN STRIP ── */
+.unsaid-truths-strip {
+  border-top: 3px solid var(--ink);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: stretch;
+  min-height: 90px;
+}
+.ut-label-col {
+  background: var(--ink);
+  color: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  text-align: center;
+  border-right: 3px solid var(--saffron);
+  flex-shrink: 0;
+}
+.ut-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: var(--yellow);
+}
+.ut-subtitle {
+  font-size: 7.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-top: 4px;
+}
+.ut-content {
+  padding: 10px 18px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  align-items: stretch;
+}
+.ut-content::-webkit-scrollbar { display: none; }
+.ut-item {
+  flex: 1;
+  min-width: 180px;
+  max-width: 260px;
+  border-right: 1px solid var(--rule);
+  padding: 6px 16px 6px 0;
+  margin-right: 16px;
+}
+.ut-item:last-child { border-right: none; margin-right: 0; }
+.ut-item-tag {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 4px;
+}
+.ut-item-hl {
+  font-family: 'DM Serif Display', serif;
+  font-size: 13px;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+.ut-item-body {
+  font-size: 9px;
+  line-height: 1.65;
+  color: #4a3e30;
+}
+
+/* ── NAV ── */
+nav {
+  border-bottom: 2px solid var(--rule);
+  padding: 7px 36px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+nav::-webkit-scrollbar{display:none}
+nav a {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 14px;
+  border-right: 1px solid var(--rule);
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+nav a:first-child{border-left:1px solid var(--rule)}
+nav a:hover, nav a.active{background:var(--ink);color:var(--yellow)}
+
+/* ── MAIN ── */
+main { max-width: 1300px; margin: 0 auto; padding: 22px 36px 60px; }
+
+.section-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-top: 3px solid var(--ink);
+  padding-top: 5px;
+  margin-bottom: 18px;
+}
+
+/* ── MONDAY FRONT PAGE BANNER ── */
+.monday-banner {
+  background: var(--ink);
+  color: var(--yellow);
+  text-align: center;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+  border: 3px solid var(--saffron);
+}
+.mb-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 10px;
+}
+.mb-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 5vw, 72px);
+  line-height: 0.9;
+  letter-spacing: 2px;
+  color: var(--yellow);
+}
+.mb-sub {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(12px, 1.8vw, 18px);
+  color: var(--paper);
+  margin-top: 10px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mb-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+  text-align: left;
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mb-col-item {
+  background: rgba(255,255,255,0.06);
+  border-left: 3px solid var(--saffron);
+  padding: 10px 14px;
+}
+.mb-col-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 7.5px;
+  letter-spacing: 0.2em;
+  color: var(--saffron);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.mb-col-list {
+  font-size: 10px;
+  color: var(--paper);
+  line-height: 2;
+  list-style: none;
+}
+.mb-col-list li::before { content: "· "; color: var(--yellow); }
+.mb-note {
+  font-size: 8.5px;
+  color: #888;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 14px;
+}
+
+/* ── TAG ── */
+.tag {
+  display: inline-block;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 2px 9px;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+.tag-black { background: var(--ink); color: var(--yellow); }
+.tag-saffron { background: var(--saffron); color: white; }
+.tag-green { background: var(--green); color: white; }
+.tag-outline { border: 1.5px solid var(--ink); color: var(--ink); }
+
+/* ── ACTUAL NEWS BOX ── */
+.actual-news {
+  background: #ede5cf;
+  border-left: 3px solid var(--muted);
+  padding: 10px 14px;
+  margin: 12px 0;
+  font-size: 10.5px;
+  line-height: 1.7;
+  color: #5a4e3a;
+}
+.actual-news-label {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+/* ── HERO ── */
+.hero-wrap {
+  display: grid;
+  grid-template-columns: 1.9fr 1fr;
+  gap: 0;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 26px;
+  margin-bottom: 28px;
+}
+.hero-main { border-right: 2px solid var(--rule); padding-right: 28px; }
+.hero-side { padding-left: 26px; display: flex; flex-direction: column; gap: 22px; }
+
+.hero-hl {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(30px, 4.2vw, 64px);
+  line-height: 0.92;
+  margin-bottom: 10px;
+}
+.hero-deck {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.45;
+  border-left: 3px solid var(--saffron);
+  padding-left: 12px;
+  margin-bottom: 14px;
+  color: #2a2420;
+}
+.body-text {
+  font-size: 11.5px;
+  line-height: 1.85;
+  color: #2e2820;
+}
+.body-text p { margin-bottom: 10px; }
+.hl { background: var(--yellow); padding: 0 3px; font-weight: 700; }
+
+.article-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-top: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.dot { color: var(--rule); }
+
+/* ── MEME BOX ── */
+.meme-box {
+  background: var(--ink);
+  padding: 14px;
+  margin: 16px 0;
+  color: var(--yellow);
+  text-align: center;
+}
+.meme-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  color: #888;
+  letter-spacing: 0.2em;
+  margin-bottom: 6px;
+}
+.meme-visual {
+  background: #181818;
+  border: 1px dashed #444;
+  padding: 18px 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  font-family: 'Space Mono', monospace;
+  color: var(--yellow);
+}
+.meme-footer { font-size: 9px; color: #666; font-family:'Space Mono',monospace; margin-top:6px; }
+
+/* ── SIDE CARD ── */
+.side-card { border-top: 2px solid var(--rule); padding-top: 14px; }
+.side-hl {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  line-height: 1.22;
+  margin-bottom: 8px;
+}
+.side-body { font-size: 10.5px; line-height: 1.72; color: #3e3428; }
+
+/* ── PULL QUOTE ── */
+.pull {
+  border-left: 5px solid var(--saffron);
+  border-right: 5px solid var(--saffron);
+  padding: 18px 24px;
+  margin: 26px 0;
+  text-align: center;
+}
+.pull blockquote {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.35;
+}
+.pull cite {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+}
+
+/* ── THREE COL ── */
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 26px;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+}
+.col-card { border-top: 2px solid var(--ink); padding-top: 11px; }
+.col-hl {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  line-height: 1.22;
+  margin-bottom: 8px;
+}
+.col-body { font-size: 10.5px; line-height: 1.75; color: #342e28; }
+
+/* ── OPINION BLOCK ── */
+.opinion {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 22px 26px;
+  margin-bottom: 28px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  align-items: center;
+}
+.op-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  color: var(--saffron);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.op-hl {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(22px, 3vw, 36px);
+  line-height: 0.95;
+  color: var(--yellow);
+  margin-bottom: 12px;
+}
+.op-body { font-size: 11.5px; line-height: 1.82; color: #c4b89a; }
+.op-author { font-size: 8.5px; letter-spacing:0.15em; text-transform:uppercase; color:var(--saffron); margin-top:14px; }
+
+/* ── STAT STRIP ── */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 2px solid var(--ink);
+  margin-bottom: 28px;
+}
+.stat-item {
+  padding: 16px 18px;
+  border-right: 2px solid var(--ink);
+  text-align: center;
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 38px;
+  color: var(--saffron);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 8.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* ── VIRAL CHART ── */
+.viral {
+  border: 2px solid var(--rule);
+  padding: 18px 20px;
+  margin-bottom: 28px;
+}
+.viral-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 7px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.viral-title span { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); }
+.v-item {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+}
+.v-item:last-child { border-bottom: none; }
+.v-rank { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--saffron); line-height:1; }
+.v-text { font-size: 11.5px; line-height: 1.5; }
+.v-text strong { font-family:'DM Serif Display',serif; font-size:13.5px; display:block; margin-bottom:4px; }
+.v-meter { font-size:8.5px; color:var(--muted); text-align:right; white-space:nowrap; }
+.bar { height:3px; background:var(--rule); margin-top:4px; position:relative; }
+.bar-fill { position:absolute; left:0;top:0;height:100%; background:var(--saffron); transition:width 1.2s ease; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 4px double var(--rule);
+  padding: 20px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 9.5px;
+  color: var(--muted);
+  letter-spacing:0.1em;
+}
+.footer-brand { font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--ink); }
+.footer-brand span { color: var(--saffron); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.monday-banner { animation: fadeUp 0.4s ease both 0.05s; }
+.hero-wrap { animation: fadeUp 0.5s ease both 0.1s; }
+.stat-strip { animation: fadeUp 0.5s ease both 0.15s; }
+.three-col { animation: fadeUp 0.5s ease both 0.2s; }
+.opinion { animation: fadeUp 0.5s ease both 0.25s; }
+.viral { animation: fadeUp 0.5s ease both 0.3s; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:800px){
+  header{padding:14px 18px 0}
+  .masthead-top{grid-template-columns:1fr;text-align:center}
+  .h-left,.h-right{display:none}
+  .unsaid-truths-strip{grid-template-columns:1fr}
+  .ut-label-col{flex-direction:row;gap:10px;padding:8px 14px;justify-content:center}
+  main{padding:14px 16px 40px}
+  nav{padding:7px 16px}
+  .hero-wrap{grid-template-columns:1fr}
+  .hero-main{border-right:none;padding-right:0;border-bottom:2px solid var(--rule);padding-bottom:18px;margin-bottom:18px}
+  .hero-side{padding-left:0}
+  .three-col{grid-template-columns:1fr}
+  .stat-strip{grid-template-columns:repeat(2,1fr)}
+  .stat-item{border-bottom:2px solid var(--ink)}
+  .opinion{grid-template-columns:1fr}
+  .op-label{writing-mode:horizontal-tb;transform:none;font-size:22px}
+  footer{flex-direction:column;gap:6px;text-align:center;padding:18px}
+  .mb-two-col{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- FLAG STRIPE -->
+<div class="flag-stripe"></div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner" id="tickerInner"></div>
+</div>
+
+<!-- MASTHEAD -->
+<header>
+  <div class="masthead-top">
+    <div class="h-left">
+      <div class="edition-pill">📰 Monday Front Page</div>
+      <div>Monday, 15 June 2026</div>
+      <div>Vol. I · Issue No. 030</div>
+      <div>Price: One Politely Ignored Insight</div>
+    </div>
+    <div class="masthead-center">
+      <h1>UN<span>SAID</span></h1>
+      <div class="hindi-sub">जो कहा नहीं गया, वो हम कहेंगे</div>
+      <div class="tagline">"The news between the lines, the truth behind the statement."</div>
+    </div>
+    <div class="h-right">
+      <div>Est. 2024</div>
+      <div>Readership: Chronically Online Bharatiyas</div>
+      <div>Bias: Geopolitically Aware & Unapologetic</div>
+      <div>Coverage: Jugaad Journalism™</div>
+    </div>
+  </div>
+
+  <!-- UNSAID TRUTHS COLUMN -->
+  <div class="unsaid-truths-strip">
+    <div class="ut-label-col">
+      <div class="ut-title">UNSAID TRUTHS</div>
+      <div class="ut-subtitle">The column that says it</div>
+    </div>
+    <div class="ut-content">
+      <div class="ut-item">
+        <div class="ut-item-tag">🌍 On Summits</div>
+        <div class="ut-item-hl">Being invited is not the same as being heard.</div>
+        <div class="ut-item-body">India now gets invited everywhere. The real flex is what happens after the photo.</div>
+      </div>
+      <div class="ut-item">
+        <div class="ut-item-tag">🤝 On Trade Talks</div>
+        <div class="ut-item-hl">A deal that's "not imminent" is a deal that hasn't started yet.</div>
+        <div class="ut-item-body">Talks about talks about a framework is not diplomacy. It's calendar management.</div>
+      </div>
+      <div class="ut-item">
+        <div class="ut-item-tag">🧅 On Inflation</div>
+        <div class="ut-item-hl">The vegetable counter does not care about CPI basket weightage.</div>
+        <div class="ut-item-body">Two numbers exist: the official one, and the one your mother quotes at the sabzi wala.</div>
+      </div>
+      <div class="ut-item">
+        <div class="ut-item-tag">☁️ On Monsoon</div>
+        <div class="ut-item-hl">We have AI. We still wait for clouds to show up on time.</div>
+        <div class="ut-item-body">Space tech, nuclear capability, G7 invitee. Economy strategy: please rain.</div>
+      </div>
+      <div class="ut-item">
+        <div class="ut-item-tag">🛠️ On Make in India</div>
+        <div class="ut-item-hl">Buy it or build it. Hoping to do both is optimism, not strategy.</div>
+        <div class="ut-item-body">Every nation wants the tech. India wants it while also making it. The bill is pending.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="active">Monday Edition</a>
+  <a href="#">Geopolitics</a>
+  <a href="#">Economy</a>
+  <a href="#">Opinion</a>
+  <a href="#">Ratio Report</a>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+  <!-- MONDAY FRONT PAGE BANNER -->
+  <div class="monday-banner">
+    <div class="mb-eyebrow">📰 Monday Front Page · 15 June 2026 · Geopolitics & Economy Edition</div>
+    <div class="mb-title">INDIA 2026:<br>ATTENDING GLOBAL SUMMITS<br>WHILE CHECKING TOMATO PRICES.</div>
+    <div class="mb-sub">One conversation decides India's future. The other decides dinner. Both are happening simultaneously and neither is waiting for the other.</div>
+    <div class="mb-two-col">
+      <div class="mb-col-item">
+        <div class="mb-col-label">At One End</div>
+        <ul class="mb-col-list">
+          <li>G7 Summit, France</li>
+          <li>AI &amp; trade partnerships</li>
+          <li>Strategic alliances</li>
+          <li>Global South leadership</li>
+        </ul>
+      </div>
+      <div class="mb-col-item">
+        <div class="mb-col-label">At The Other</div>
+        <ul class="mb-col-list">
+          <li>Retail inflation at 3.93%</li>
+          <li>Fuel price anxiety</li>
+          <li>Weak monsoon forecast</li>
+          <li>Grocery bills, unresolved</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mb-note">UNSAID · "Sources confirm the average Indian now follows geopolitics for exactly two reasons: petrol prices and onion prices." 📰🔥</div>
+  </div>
+
+  <div class="section-label">Monday Deep Dive — Geopolitics, Economy &amp; The Nation's Two Conversations · 15 June 2026</div>
+
+  <!-- HERO: GEOPOLITICS -->
+  <div class="hero-wrap">
+    <div class="hero-main">
+      <span class="tag tag-black">🌍 GEOPOLITICS</span>
+      <h2 class="hero-hl">INDIA HEADS TO G7 AGAIN.<br>APPARENTLY BEING IMPORTANT IS NOW A FULL-TIME JOB.</h2>
+      <p class="hero-deck">Twenty years ago India wanted a seat at the table. Now the table keeps sending invitations. The challenge isn't getting invited anymore. The challenge is turning photo opportunities into actual influence.</p>
+
+      <div class="actual-news">
+        <div class="actual-news-label">📋 Actual News</div>
+        Prime Minister Narendra Modi is attending the G7 Summit in France, where discussions are expected to focus on global trade, energy security, artificial intelligence, supply chains, and ongoing tensions in the Middle East. India is once again participating as a special invitee and is expected to push issues concerning the Global South.
+      </div>
+
+      <div class="body-text">
+        <p>There's a version of this story that gets told with great pride, and it should. India at the G7 is not a small thing. A country that spent decades being lectured to about governance and development is now being asked what it thinks about AI regulation and global supply chains. That's a legitimate reversal of fortune worth acknowledging.</p>
+        <p>But here's the part nobody says out loud: <strong class="hl">being a "special invitee" is not the same as being a member.</strong> India still attends the G7 the way a talented friend gets invited to a private club event — appreciated, useful to have around, but not quite holding a key.</p>
+        <p>The questions worth asking aren't about attendance. They're about outcomes. How many G7 summits have translated into binding commitments for the Global South that India championed? How many of these meetings produced trade frameworks that weren't diluted in the drafting room? How many photo opportunities became policy shifts?</p>
+        <p>India is genuinely building influence. The G20 presidency, the Digital Public Infrastructure push, the growing diplomatic confidence — these are real. But <strong class="hl">influence at a table where you're a special invitee is still influence on loan.</strong> The next step isn't attending more summits. It's building the kind of leverage that makes exclusion from any summit a problem for the hosts, not the guest.</p>
+      </div>
+
+      <div class="meme-box">
+        <div class="meme-label">📊 UNSAID PERSPECTIVE — THE INDIA-US TRADE DEAL LIFECYCLE</div>
+        <div class="meme-visual">EVERY INDIA-US TRADE NEGOTIATION:<br><br>Step 1: Talks begin. Optimism expressed.<br>Step 2: Progress reported.<br>Step 3: More talks scheduled.<br>Step 4: Agreement "not imminent."<br>Step 5: Return to Step 1.<br><br>Current Status: Step 4. Since: Always.</div>
+        <div class="meme-footer">submitted by @unsaid · cycle duration: several administrations · next cycle: already started · resolution: pending</div>
+      </div>
+
+      <div class="article-meta">
+        <span>UNSAID: Nation Has A Seat. Nation Wants The Vote. These Are Different Things.</span>
+        <span class="dot">·</span>
+        <span>By The Editorial Desk @unsaid</span>
+        <span class="dot">·</span>
+        <span>8 min read · 🌍 Geopolitics</span>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="side-card">
+        <span class="tag tag-saffron">🤝 INDIA-US RELATIONS</span>
+        <h3 class="side-hl">India And America Continue The World's Longest Group Project.</h3>
+        <div class="actual-news" style="font-size:9.5px; padding:8px 12px;">
+          <div class="actual-news-label">📋 Actual News</div>
+          A meeting between PM Modi and President Trump is expected at the G7. Trade, visas, energy cooperation, and strategic relations are on the agenda. A major trade agreement is still not imminent.
+        </div>
+        <p class="side-body">Every India-US trade negotiation follows the same cycle: Talks begin. Progress is reported. Optimism is expressed. More talks are scheduled. At this point, the negotiations have their own ecosystem. The relationship is genuine and strategically important. The paperwork is pending. It has been pending since the UPA era. The paperwork is very patient. The paperwork may outlive all of us.</p>
+        <div class="article-meta" style="margin-top:8px;">UNSAID: Two Largest Democracies. One Pending Trade Deal. Many Committee Meetings. · @unsaid · 4 min read</div>
+      </div>
+
+      <div class="side-card">
+        <span class="tag tag-green">🛠️ DEFENCE &amp; TECH</span>
+        <h3 class="side-hl">India Wants To Build The Future Before Importing It.</h3>
+        <div class="actual-news" style="font-size:9.5px; padding:8px 12px;">
+          <div class="actual-news-label">📋 Actual News</div>
+          India is emphasizing technology partnerships, defence cooperation, and Make in India during discussions with France. Aerospace and advanced tech manufacturing remain key focus areas.
+        </div>
+        <p class="side-body">Every nation wants advanced technology. The real question is: Do you buy it? Or do you build it? India is currently trying to do both at the same time and hoping the bill arrives later. This is not entirely a problem. This is, in fact, how most industrial revolutions have begun. The question is execution speed. The execution speed is being monitored closely by countries who tried the same thing and didn't manage the sequencing.</p>
+        <div class="article-meta" style="margin-top:8px;">UNSAID: Strategy Is Buy It AND Build It. Timeline: Hopeful. Budget: Jugaad. · @unsaid · 3 min read</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE 1 -->
+  <div class="pull">
+    <blockquote>"BEING A SPECIAL INVITEE IS NOT THE SAME AS BEING A MEMBER. INDIA ATTENDS THE G7 THE WAY A TALENTED FRIEND GETS INVITED TO A PRIVATE CLUB — APPRECIATED, USEFUL, BUT NOT QUITE HOLDING A KEY."</blockquote>
+    <cite>— UNSAID Editorial Desk · Monday, 15 June 2026 · The next step isn't more summits. It's leverage that makes exclusion the host's problem, not the guest's.</cite>
+  </div>
+
+  <!-- STAT STRIP -->
+  <div class="stat-strip">
+    <div class="stat-item">
+      <div class="stat-num">3.93%</div>
+      <div class="stat-label">Official Retail Inflation May 2026. Tomato Inflation: Felt But Not Officially Calibrated.</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">G7</div>
+      <div class="stat-label">Summit Attended As Special Invitee. Not As Member. This Distinction: Large. Coverage Of It: Minimal.</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">El Niño</div>
+      <div class="stat-label">Climate Condition Threatening Monsoon. A Large Part Of India's Economy Watching Clouds.</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">India-US Trade Deal Rounds Completed. Agreements Reached: Pending. Optimism: Renewable Resource.</div>
+    </div>
+  </div>
+
+  <!-- THREE COL -->
+  <div class="section-label">Three Things Happening In India While The Cameras Are Pointed At France</div>
+  <div class="three-col">
+    <div class="col-card">
+      <span class="tag tag-black">🧅 ECONOMY</span>
+      <h3 class="col-hl">Inflation Is Under Control, Says Spreadsheet. Vegetables Request A Second Opinion.</h3>
+      <div class="actual-news" style="font-size:9.5px; padding:8px 12px; margin-bottom:10px;">
+        <div class="actual-news-label">📋 Actual News</div>
+        India's retail inflation rose to 3.93% in May due to increasing food and fuel costs. Economists warn inflationary pressures could increase if fuel prices rise or monsoon worsens.
+      </div>
+      <p class="col-body">The official inflation number is one thing. The emotional inflation rate experienced by anyone buying tomatoes is another. One is measured by economists using a carefully constructed basket of goods. The other is measured in the silence that falls over a household when someone reads the grocery bill out loud. Both are real. Only one makes it into the policy report. The distinction matters because people don't eat the CPI basket. They eat tomatoes. Tomatoes currently have opinions about economic data that the data has not accounted for.</p>
+      <div class="article-meta" style="margin-top:10px;">UNSAID: Two Inflation Rates Exist. One Is Official. One Is Emotional. The Second One Votes. · @unsaid · 39K shares</div>
+    </div>
+    <div class="col-card">
+      <span class="tag tag-saffron">☁️ MONSOON &amp; AGRICULTURE</span>
+      <h3 class="col-hl">Entire Economy Waiting For Clouds To Finish Their Internal Discussions.</h3>
+      <div class="actual-news" style="font-size:9.5px; padding:8px 12px; margin-bottom:10px;">
+        <div class="actual-news-label">📋 Actual News</div>
+        Meteorologists are monitoring concerns over a weaker-than-normal monsoon season. El Niño conditions are expected to affect rainfall, crop production, food prices, and rural incomes.
+      </div>
+      <p class="col-body">For a country discussing AI, quantum computing, and space technology — a large part of the economy still depends on whether clouds show up on time. That's not a joke. That's the business model. India simultaneously launches satellites and waits for rain. This is not a contradiction. It is a country at two different points of development occupying the same geography at the same time. In practice: if the monsoon underdelivers, no summit photo will keep dal prices stable. The weather does not attend G7 as a special invitee or otherwise.</p>
+      <div class="article-meta" style="margin-top:10px;">UNSAID: India Has ISRO. India Also Has A Large Portion Of GDP That Requires Clouds To Cooperate. · @unsaid · 51K shares</div>
+    </div>
+    <div class="col-card">
+      <span class="tag tag-green">🗺️ THE BIGGER PICTURE</span>
+      <h3 class="col-hl">India At 2026: Two Conversations Happening In The Same Country At The Same Time.</h3>
+      <p class="col-body">The India at the G7 table and the India checking vegetable prices on a Monday morning are the same India. Same passport. Same flag. Wildly different Monday mornings. One conversation is about supply chains and AI regulation and global influence. The other is about whether the ₹500 note will cover this week's groceries after last Thursday's fuel price nudge. Neither conversation cancels out the other. Both are legitimate. Both are real. The mistake — made repeatedly by government communication and media coverage alike — is treating them as if they exist in separate countries. They don't. They exist in the same kitchen, at the same table, over the same breakfast, simultaneously.</p>
+      <div class="article-meta" style="margin-top:10px;">UNSAID: G7 And Grocery Inflation Are The Same Story. One Country. Two Realities. Zero Acknowledgment. · @unsaid · 68K shares</div>
+    </div>
+  </div>
+
+  <!-- OPINION BLOCK -->
+  <div class="opinion">
+    <div class="op-label">OPINION</div>
+    <div>
+      <div class="op-hl">TODAY'S EDITORIAL: GDP IS NOT A FAMILY BUDGET.<br>INDIA NEEDS BOTH CONVERSATIONS IN THE SAME ROOM.</div>
+      <p class="op-body">Every Monday after a major summit, two headlines share the same front page. One about what was discussed in a conference room in Europe. One about what is now costing more at the local market. And the country is expected to feel both things simultaneously — pride and anxiety — without anyone officially acknowledging that these two feelings are connected to the same set of policy decisions.</p>
+      <p class="op-body" style="margin-top:10px;">The growth story is real. India's rise as a global voice is real. The digital infrastructure, the diplomatic confidence, the expanding trade relationships — these are genuine achievements built over decades by policy decisions that deserve credit. But achievement at the macro level and relief at the household level are not the same announcement. A nation that is simultaneously more important globally and more stressed domestically is not a contradiction. It is a policy gap dressed in a press release.</p>
+      <p class="op-body" style="margin-top:10px;">The question the G7 photos don't answer is the one your neighbour is asking at the sabzi mandi. <strong style="color:var(--yellow)">If the country is growing, why does growing feel this expensive? That question isn't cynicism. It's a legitimate request for the two conversations to finally happen in the same room, with the same urgency, at the same press conference.</strong> Until then, India will continue attending summits and checking tomato prices. Separately. Simultaneously. Without irony. Without explanation.</p>
+      <div class="op-author">— UNSAID Editorial Desk · Monday, 15 June 2026 · One conversation decides India's future. The other decides dinner. Both deserve the same seriousness.</div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE 2 -->
+  <div class="pull">
+    <blockquote>"IF THE COUNTRY IS GROWING, WHY DOES GROWING FEEL THIS EXPENSIVE? THAT IS NOT CYNICISM. THAT IS A LEGITIMATE QUESTION WAITING FOR A LEGITIMATE ANSWER AT THE SAME TABLE WHERE THE GDP NUMBERS ARE CELEBRATED."</blockquote>
+    <cite>— UNSAID · Monday Edition · 15 June 2026 · Sources confirm the average Indian follows geopolitics for exactly two reasons: petrol prices and onion prices.</cite>
+  </div>
+
+  <!-- VIRAL CHART -->
+  <div class="viral">
+    <div class="viral-title">
+      TODAY'S RATIO REPORT: MONDAY GEOPOLITICS EDITION
+      <span>Updated: Every time someone checks petrol price after watching summit coverage</span>
+    </div>
+
+    <div class="v-item">
+      <div class="v-rank">1</div>
+      <div class="v-text">
+        <strong>India Attends G7 As "Special Invitee." Same Title Since 2003. Definition Of Special: Still Pending Investigation.</strong>
+        The invitation keeps coming. The membership does not. India attends with growing confidence and diminishing novelty. The conversations are real. The influence is increasing. The status is still "special invitee," which is a diplomatic category that means everything and nothing depending on which sentence you're in. The table is set. India has a chair. The chair does not yet have a vote. This gap between the chair and the vote is where most of India's foreign policy work currently lives.
+      </div>
+      <div class="v-meter">
+        9.7M views
+        <div class="bar"><div class="bar-fill" style="width:0" data-w="100%"></div></div>
+        ratio: diplomatically nuanced
+      </div>
+    </div>
+
+    <div class="v-item">
+      <div class="v-rank">2</div>
+      <div class="v-text">
+        <strong>India-US Trade Deal Negotiations Have Now Outlasted Several Governments, One Pandemic, And Three Generations Of Optimistic Press Briefings.</strong>
+        The trade deal is always close. It has been close since the Obama administration. It remains close under every subsequent administration. Closeness, in diplomatic terms, appears to be a renewable and non-depletable resource. The relationship between India and the United States is genuinely strong and strategically important. The trade agreement that would formalise it commercially exists primarily in the form of press releases expressing optimism. The optimism is also renewable.
+      </div>
+      <div class="v-meter">
+        6.4M views
+        <div class="bar"><div class="bar-fill" style="width:0" data-w="72%"></div></div>
+        ratio: productively stalled
+      </div>
+    </div>
+
+    <div class="v-item">
+      <div class="v-rank">3</div>
+      <div class="v-text">
+        <strong>Retail Inflation At 3.93%. Tomatoes Currently Conducting Their Own Independent Economic Survey. Results Available At The Vegetable Counter.</strong>
+        The official number is 3.93%. The number is not wrong. The number is also not the full picture. Inflation is measured across a basket of goods assembled by economists. That basket doesn't go to the same market your mother goes to. Your mother has her own number. Her number is not 3.93%. Her number is a specific expression that appears on her face when she hears 3.93% on the news and then looks at the grocery bill. That face is also data. Nobody has figured out how to put it in a policy report yet.
+      </div>
+      <div class="v-meter">
+        4.8M views
+        <div class="bar"><div class="bar-fill" style="width:0" data-w="55%"></div></div>
+        ratio: economically accurate, emotionally incomplete
+      </div>
+    </div>
+
+    <div class="v-item">
+      <div class="v-rank">4</div>
+      <div class="v-text">
+        <strong>Monsoon Forecast Uncertain. Economy: Watching Clouds. AI Summit: Also Happening. Both True. Neither Waiting For The Other.</strong>
+        India is at a G7 discussing artificial intelligence while meteorologists watch El Niño conditions that could affect the agricultural output of 600 million rural Indians. These two facts are not in conflict. They are the same story: a nation straddling two centuries at the same time. The AI conversation is real. The monsoon dependency is also real. The story worth telling is both together. That story is not currently being told. The stories are running on separate pages, in separate tones, for separate audiences, as though the country is two different countries sharing a flag and a flag alone.
+      </div>
+      <div class="v-meter">
+        2.9M views
+        <div class="bar"><div class="bar-fill" style="width:0" data-w="33%"></div></div>
+        ratio: productively uncomfortable
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">UN<span>SAID</span></div>
+  <div>© 2026 · Monday Edition · All Subtext Reserved · Jugaad Journalism™</div>
+  <div>unsaid.wtf · Made in 🇮🇳 with no sleep and genuine concern about both summits and tomato prices</div>
+</footer>
+
+<script>
+const TICKER_ITEMS = [
+  "🌍 BREAKING: India attends G7 as special invitee. Status: same as 2003. Confidence: significantly higher. Membership: still pending.",
+  "🧅 Retail inflation at 3.93% in May. Tomato inflation: unclassified but deeply personal. Both are real. Only one is in the CPI.",
+  "🤝 India-US trade deal still not imminent. Has not been imminent since the UPA era. Imminence: a resilient and renewable resource.",
+  "☁️ El Niño threatens monsoon season. Economy watching clouds. AI summit also happening. Nation multitasking at civilisational scale.",
+  "🛠️ India to build defence technology while also buying it. Strategy: both. Budget: hopeful. Timeline: jugaad. Bill: arriving later.",
+  "📰 G7 photo released. India is in it. G7 membership: not in it. Special invitee status: very much in it. Progress: ongoing.",
+  "🧮 GDP growing. Household budgets: not growing at the same speed. Gap between those two sentences: where most of India lives.",
+  "🌧️ Monsoon forecast uncertain. Half the economy dependent on rainfall. Other half at an AI conference. India contains multitudes.",
+  "📊 UNSAID DATA: 0 journalists asked whether G7 photo will reduce onion prices. 14 journalists asked about photo lighting. Priorities noted.",
+  "🇮🇳 India 2026: Discussing AI regulation while hoping vegetables don't get more expensive. Both are real Monday morning problems.",
+];
+
+const all = [...TICKER_ITEMS, ...TICKER_ITEMS];
+document.getElementById('tickerInner').innerHTML = all.map(t => `<span>${t}</span>`).join('');
+
+setTimeout(() => {
+  document.querySelectorAll('.bar-fill').forEach(el => {
+    el.style.width = el.dataset.w;
+  });
+}, 600);
+</script>
+</body>
+</html>
