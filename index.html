@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNSAID — Maharashtra Special 🇮🇳 · Netagiri Industry Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d0d0d;
+  --paper: #f4efe3;
+  --saffron: #FF6B00;
+  --green: #138808;
+  --yellow: #FFC300;
+  --cream: #fdf8ee;
+  --muted: #7a6e60;
+  --rule: #c4b89a;
+  --white: #fff;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Space Mono', monospace;
+  overflow-x: hidden;
+}
+
+body::after {
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;
+}
+
+/* ── TICKER ── */
+.ticker {
+  background: var(--saffron);
+  color: var(--white);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px 0;
+  border-bottom: 2px solid var(--ink);
+}
+.ticker-inner { display:inline-block; animation: tick 60s linear infinite; }
+.ticker-inner span { margin: 0 36px; }
+@keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── FLAG STRIPE ── */
+.flag-stripe {
+  height: 5px;
+  background: linear-gradient(to right, #FF9933 33.33%, #fff 33.33% 66.66%, #138808 66.66%);
+}
+
+/* ── MASTHEAD ── */
+header {
+  border-bottom: 4px double var(--rule);
+  padding: 20px 36px 0;
+}
+.masthead-top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 8px;
+  padding-bottom: 14px;
+}
+.h-left, .h-right {
+  font-size: 9.5px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 2;
+}
+.h-right { text-align: right; }
+.masthead-center { text-align: center; }
+.masthead-center h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(44px, 7.5vw, 100px);
+  line-height: 0.88;
+  letter-spacing: 1px;
+}
+.masthead-center h1 span { color: var(--saffron); }
+.masthead-center .hindi-sub {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+.masthead-center .tagline {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.edition-pill {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--yellow);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* ── UNSAID TRUTHS COLUMN STRIP ── */
+.unsaid-truths-strip {
+  border-top: 3px solid var(--ink);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: stretch;
+  min-height: 90px;
+}
+.ut-label-col {
+  background: var(--ink);
+  color: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  text-align: center;
+  border-right: 3px solid var(--saffron);
+  flex-shrink: 0;
+}
+.ut-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: var(--yellow);
+}
+.ut-subtitle {
+  font-size: 7.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-top: 4px;
+}
+.ut-content {
+  padding: 10px 18px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  align-items: stretch;
+}
+.ut-content::-webkit-scrollbar { display: none; }
+.ut-item {
+  flex: 1;
+  min-width: 180px;
+  max-width: 260px;
+  border-right: 1px solid var(--rule);
+  padding: 6px 16px 6px 0;
+  margin-right: 16px;
+}
+.ut-item:last-child { border-right: none; margin-right: 0; }
+.ut-item-tag {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 4px;
+}
+.ut-item-hl {
+  font-family: 'DM Serif Display', serif;
+  font-size: 13px;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+.ut-item-body {
+  font-size: 9px;
+  line-height: 1.65;
+  color: #4a3e30;
+}
+
+/* ── NAV ── */
+nav {
+  border-bottom: 2px solid var(--rule);
+  padding: 7px 36px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+nav::-webkit-scrollbar{display:none}
+nav a {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 14px;
+  border-right: 1px solid var(--rule);
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+nav a:first-child{border-left:1px solid var(--rule)}
+nav a:hover, nav a.active{background:var(--ink);color:var(--yellow)}
+
+/* ── MAIN ── */
+main { max-width: 1300px; margin: 0 auto; padding: 22px 36px 60px; }
+
+.section-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-top: 3px solid var(--ink);
+  padding-top: 5px;
+  margin-bottom: 18px;
+}
+
+/* ── MONDAY FRONT PAGE BANNER ── */
+.monday-banner {
+  background: var(--ink);
+  color: var(--yellow);
+  text-align: center;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+  border: 3px solid var(--saffron);
+}
+.mb-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 10px;
+}
+.mb-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 5vw, 72px);
+  line-height: 0.9;
+  letter-spacing: 2px;
+  color: var(--yellow);
+}
+.mb-sub {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(12px, 1.8vw, 18px);
+  color: var(--paper);
+  margin-top: 10px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mb-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+  text-align: left;
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mb-col-item {
+  background: rgba(255,255,255,0.06);
+  border-left: 3px solid var(--saffron);
+  padding: 10px 14px;
+}
+.mb-col-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 7.5px;
+  letter-spacing: 0.2em;
+  color: var(--saffron);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.mb-col-list {
+  font-size: 10px;
+  color: var(--paper);
+  line-height: 2;
+  list-style: none;
+}
+.mb-col-list li::before { content: "· "; color: var(--yellow); }
+.mb-note {
+  font-size: 8.5px;
+  color: #888;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 14px;
+}
+
+/* ── TAG ── */
+.tag {
+  display: inline-block;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 2px 9px;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+.tag-black { background: var(--ink); color: var(--yellow); }
+.tag-saffron { background: var(--saffron); color: white; }
+.tag-green { background: var(--green); color: white; }
+.tag-outline { border: 1.5px solid var(--ink); color: var(--ink); }
+
+/* ── ACTUAL NEWS BOX ── */
+.actual-news {
+  background: #ede5cf;
+  border-left: 3px solid var(--muted);
+  padding: 10px 14px;
+  margin: 12px 0;
+  font-size: 10.5px;
+  line-height: 1.7;
+  color: #5a4e3a;
+}
+.actual-news-label {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+/* ── HERO ── */
+.hero-wrap {
+  display: grid;
+  grid-template-columns: 1.9fr 1fr;
+  gap: 0;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 26px;
+  margin-bottom: 28px;
+}
+.hero-main { border-right: 2px solid var(--rule); padding-right: 28px; }
+.hero-side { padding-left: 26px; display: flex; flex-direction: column; gap: 22px; }
+
+.hero-hl {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(30px, 4.2vw, 64px);
+  line-height: 0.92;
+  margin-bottom: 10px;
+}
+.hero-deck {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.45;
+  border-left: 3px solid var(--saffron);
+  padding-left: 12px;
+  margin-bottom: 14px;
+  color: #2a2420;
+}
+.body-text {
+  font-size: 11.5px;
+  line-height: 1.85;
+  color: #2e2820;
+}
+.body-text p { margin-bottom: 10px; }
+.hl { background: var(--yellow); padding: 0 3px; font-weight: 700; }
+
+.article-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-top: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.dot { color: var(--rule); }
+
+/* ── MEME BOX ── */
+.meme-box {
+  background: var(--ink);
+  padding: 14px;
+  margin: 16px 0;
+  color: var(--yellow);
+  text-align: center;
+}
+.meme-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  color: #888;
+  letter-spacing: 0.2em;
+  margin-bottom: 6px;
+}
+.meme-visual {
+  background: #181818;
+  border: 1px dashed #444;
+  padding: 18px 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  font-family: 'Space Mono', monospace;
+  color: var(--yellow);
+}
+.meme-footer { font-size: 9px; color: #666; font-family:'Space Mono',monospace; margin-top:6px; }
+
+/* ── SIDE CARD ── */
+.side-card { border-top: 2px solid var(--rule); padding-top: 14px; }
+.side-hl {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  line-height: 1.22;
+  margin-bottom: 8px;
+}
+.side-body { font-size: 10.5px; line-height: 1.72; color: #3e3428; }
+
+/* ── PULL QUOTE ── */
+.pull {
+  border-left: 5px solid var(--saffron);
+  border-right: 5px solid var(--saffron);
+  padding: 18px 24px;
+  margin: 26px 0;
+  text-align: center;
+}
+.pull blockquote {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.35;
+}
+.pull cite {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+}
+
+/* ── THREE COL ── */
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 26px;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+}
+.col-card { border-top: 2px solid var(--ink); padding-top: 11px; }
+.col-hl {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  line-height: 1.22;
+  margin-bottom: 8px;
+}
+.col-body { font-size: 10.5px; line-height: 1.75; color: #342e28; }
+
+/* ── OPINION BLOCK ── */
+.opinion {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 22px 26px;
+  margin-bottom: 28px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  align-items: center;
+}
+.op-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  color: var(--saffron);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.op-hl {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(22px, 3vw, 36px);
+  line-height: 0.95;
+  color: var(--yellow);
+  margin-bottom: 12px;
+}
+.op-body { font-size: 11.5px; line-height: 1.82; color: #c4b89a; }
+.op-author { font-size: 8.5px; letter-spacing:0.15em; text-transform:uppercase; color:var(--saffron); margin-top:14px; }
+
+/* ── STAT STRIP ── */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 2px solid var(--ink);
+  margin-bottom: 28px;
+}
+.stat-item {
+  padding: 16px 18px;
+  border-right: 2px solid var(--ink);
+  text-align: center;
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 38px;
+  color: var(--saffron);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 8.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* ── VIRAL CHART ── */
+.viral {
+  border: 2px solid var(--rule);
+  padding: 18px 20px;
+  margin-bottom: 28px;
+}
+.viral-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 7px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.viral-title span { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); }
+.v-item {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+}
+.v-item:last-child { border-bottom: none; }
+.v-rank { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--saffron); line-height:1; }
+.v-text { font-size: 11.5px; line-height: 1.5; }
+.v-text strong { font-family:'DM Serif Display',serif; font-size:13.5px; display:block; margin-bottom:4px; }
+.v-meter { font-size:8.5px; color:var(--muted); text-align:right; white-space:nowrap; }
+.bar { height:3px; background:var(--rule); margin-top:4px; position:relative; }
+.bar-fill { position:absolute; left:0;top:0;height:100%; background:var(--saffron); transition:width 1.2s ease; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 4px double var(--rule);
+  padding: 20px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 9.5px;
+  color: var(--muted);
+  letter-spacing:0.1em;
+}
+.footer-brand { font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--ink); }
+.footer-brand span { color: var(--saffron); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.monday-banner { animation: fadeUp 0.4s ease both 0.05s; }
+.hero-wrap { animation: fadeUp 0.5s ease both 0.1s; }
+.stat-strip { animation: fadeUp 0.5s ease both 0.15s; }
+.three-col { animation: fadeUp 0.5s ease both 0.2s; }
+.opinion { animation: fadeUp 0.5s ease both 0.25s; }
+.viral { animation: fadeUp 0.5s ease both 0.3s; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:800px){
+  header{padding:14px 18px 0}
+  .masthead-top{grid-template-columns:1fr;text-align:center}
+  .h-left,.h-right{display:none}
+  .unsaid-truths-strip{grid-template-columns:1fr}
+  .ut-label-col{flex-direction:row;gap:10px;padding:8px 14px;justify-content:center}
+  main{padding:14px 16px 40px}
+  nav{padding:7px 16px}
+  .hero-wrap{grid-template-columns:1fr}
+  .hero-main{border-right:none;padding-right:0;border-bottom:2px solid var(--rule);padding-bottom:18px;margin-bottom:18px}
+  .hero-side{padding-left:0}
+  .three-col{grid-template-columns:1fr}
+  .stat-strip{grid-template-columns:repeat(2,1fr)}
+  .stat-item{border-bottom:2px solid var(--ink)}
+  .opinion{grid-template-columns:1fr}
+  .op-label{writing-mode:horizontal-tb;transform:none;font-size:22px}
+  footer{flex-direction:column;gap:6px;text-align:center;padding:18px}
+  .mb-two-col{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- FLAG STRIPE -->
+<div class="flag-stripe"></div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner" id="tickerInner"></div>
+</div>
+
+<!-- MASTHEAD -->
+<header>
+  <div class="masthead-top">
+    <div class="h-left">
+      <div class="edition-pill">📰 Special Report</div>
+      <div>Saturday, 20 June 2026</div>
+      <div>Vol. I · Issue No. 031</div>
+      <div>Price: One Politely Ignored RTI</div>
+    </div>
+    <div class="masthead-center">
+      <h1>UN<span>SAID</span></h1>
+      <div class="hindi-sub">जो कहा नहीं गया, वो हम कहेंगे</div>
+      <div class="tagline">"The news between the lines, the truth behind the statement."</div>
+    </div>
+    <div class="h-right">
+      <div>Est. 2024</div>
+      <div>Readership: Chronically Online Bharatiyas</div>
+      <div>Bias: State Politics, Zero Patience</div>
+      <div>Coverage: Jugaad Journalism™</div>
+    </div>
+  </div>
+
+  <!-- UNSAID TRUTHS COLUMN -->
+  <div class="unsaid-truths-strip">
+    <div class="ut-label-col">
+      <div class="ut-title">UNSAID TRUTHS</div>
+      <div class="ut-subtitle">The column that says it</div>
+    </div>
+    <div class="ut-content">
+      <div class="ut-item">
+        <div class="ut-item-tag">🏛️ On Defection</div>
+        <div class="ut-item-hl">Symbol badal jaata hai, neta nahi badalta.</div>
+        <div class="ut-item-body">Party ek ghar hai jahan kiraya nahi dena padta, sirf vote bank carry karna padta hai apne saath.</div>
+      </div>
+      <div class="ut-item">
+        <div class="ut-item-tag">🎓 On Education</div>
+        <div class="ut-item-hl">University poochho toh naam tak exist nahi karti.</div>
+        <div class="ut-item-body">Asli degree inki ek hi hai — galiyon ki PhD. Yeh syllabus IIM mein nahi padhaya jaata.</div>
+      </div>
+      <div class="ut-item">
+        <div class="ut-item-tag">🚜 On Drought</div>
+        <div class="ut-item-hl">Tanker khaali, lekin handle full hai gratitude se.</div>
+        <div class="ut-item-body">Helicopter land hota hai, photo khichti hai, neta SUV mein wapas. Resort agle saal usi gaon mein khulta hai.</div>
+      </div>
+      <div class="ut-item">
+        <div class="ut-item-tag">🌉 On Infrastructure</div>
+        <div class="ut-item-hl">Pul ka inauguration 4 baar, pul khud kabhi nahi.</div>
+        <div class="ut-item-body">Ribbon-cutting scissors pe zyada budget hai bridge se. Naam-badlai ke liye alag marble factory chal sakti hai.</div>
+      </div>
+      <div class="ut-item">
+        <div class="ut-item-tag">🕵️ On ED &amp; CBI</div>
+        <div class="ut-item-hl">Chhapa Monday, party-switch Wednesday, bhashan Friday.</div>
+        <div class="ut-item-body">Itni smooth process hai ki IIT wale case study bana sakte hain — efficient system, full marks for execution.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="#defection" class="active">Defection</a>
+  <a href="#education">Education</a>
+  <a href="#infrastructure">Infrastructure</a>
+  <a href="#ed-cbi">ED &amp; CBI</a>
+  <a href="#farmhouse">Farmhouse Economy</a>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+  <!-- ARTICLE BANNER -->
+  <div class="monday-banner">
+    <div class="mb-eyebrow">📰 Special Report · 20 June 2026 · State Politics Edition</div>
+    <div class="mb-title">MAHARASHTRA KA ASLI INDUSTRY:<br>NETAGIRI.</div>
+    <div class="mb-sub">Degree fake ho ya na ho, signature pe loan pass ho jaata hai. Maharashtra mein har 5 saal mein ek cheez guaranteed hai. Election nahi. Defection.</div>
+    <div class="mb-two-col">
+      <div class="mb-col-item">
+        <div class="mb-col-label">Affidavit Mein</div>
+        <ul class="mb-col-list">
+          <li>"Graduate" — university untraceable</li>
+          <li>"Jan Seva" as full-time qualification</li>
+          <li>Trust banaya "education" ke liye</li>
+          <li>Income: salary slip jitna hi</li>
+        </ul>
+      </div>
+      <div class="mb-col-item">
+        <div class="mb-col-label">Asli Mein</div>
+        <ul class="mb-col-list">
+          <li>Galiyon ki PhD, crowd-control degree</li>
+          <li>Zameen "industrial" se "trust" mein convert</li>
+          <li>Farmhouse, flat aur "study tour"</li>
+          <li>Baap se beta, bhatija se damaad — franchise</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mb-note">UNSAID · "Yeh state run nahi hoti. Yeh state manage hoti hai." 📰🔥</div>
+  </div>
+
+  <div class="section-label" id="defection">Special Report — Maharashtra's Politicians, Their Degrees, And Their Property Portfolio · 20 June 2026</div>
+
+  <!-- HERO: DEFECTION & QUALIFICATION -->
+  <div class="hero-wrap">
+    <div class="hero-main">
+      <span class="tag tag-black">🏛️ STATE POLITICS</span>
+      <h2 class="hero-hl">DEGREE FAKE HO YA NA HO,<br>SIGNATURE PE LOAN PASS HO JAATA HAI.</h2>
+      <p class="hero-deck">Maharashtra mein har 5 saal mein ek cheez guaranteed hai. Election nahi. Defection. Subah jis party ka jhanda, shaam ko doosri party ka stage — symbol badal jaata hai, neta nahi badalta.</p>
+
+      <div class="actual-news">
+        <div class="actual-news-label">📋 Actual News</div>
+        Maharashtra's political landscape continues to be defined by frequent party-hopping, defections, and split symbols, alongside long-running questions around the educational qualifications and asset disclosures of several elected representatives — many of which remain unresolved for years.
+      </div>
+
+      <div class="body-text">
+        <p>Aadmi same, loyalty rental. Party ek ghar hai jahan kiraya nahi dena padta, sirf vote bank carry karna padta hai apne saath, suitcase ki tarah. Inka qualification poochho toh "jan seva" bolenge. Translation: parking lot ki zameen "industrial use" mein convert karna, phir wahi zameen apne hi trust ko "donate" karna, phir wahi trust college bana ke "education" ka business shuru karna.</p>
+        <p><strong class="hl">Ye koi engineering degree nahi sikhati. Ye khud aati hai.</strong> Khaandaani hunar hai — baap se beta, beta se bhatija, bhatija se damaad. Family tree nahi, franchise hai.</p>
+      </div>
+
+      <h3 class="side-hl" id="education" style="margin-top:22px;">Education Ka Haal</h3>
+      <div class="body-text">
+        <p>Affidavit mein "graduate" likha hota hai, university poochho toh naam tak exist nahi karti Google pe. Koi bolta hai "correspondence se kiya tha," koi bolta "record office mein aag lag gayi thi." Itni aag lagti hai Maharashtra ke record offices mein, lagta hai arson insurance company khol leni chahiye.</p>
+        <p>Asli degree inki ek hi hai — galiyon ki PhD. Crowd kaise control karni hai, kaunsi jaati ko kab yaad karni hai, kis function mein kitna chanda dena hai. Yeh syllabus IIM mein nahi padhaya jaata, sirf gully aur dargah ke beech ke rasta mein milta hai.</p>
+      </div>
+
+      <div class="meme-box">
+        <div class="meme-label">📊 UNSAID PERSPECTIVE — THE PARTY-HOPPING CYCLE</div>
+        <div class="meme-visual">EK NETA KA STANDARD WEEK:<br><br>Monday: ED ka chhapa padta hai.<br>Wednesday: Wahi neta dusri party join kar leta hai.<br>Thursday: Case "technical reasons" se thanda.<br>Friday: Naye party ke stage pe "bhrashtachar mukt Maharashtra" pe bhashan.<br><br>Current Status: Loop Active. Symbol: Pending Allotment.</div>
+        <div class="meme-footer">submitted by @unsaid · loyalty tier: rental · suitcase: vote bank · cancellation: never</div>
+      </div>
+
+      <div class="article-meta">
+        <span>UNSAID: Family Tree Nahi, Franchise Hai.</span>
+        <span class="dot">·</span>
+        <span>By The Editorial Desk @unsaid</span>
+        <span class="dot">·</span>
+        <span>9 min read · 🏛️ State Politics</span>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="side-card">
+        <span class="tag tag-saffron">🚜 DROUGHT &amp; RESORTS</span>
+        <h3 class="side-hl">Drought Tourism</h3>
+        <p class="side-body">Drought padta hai gaon mein, neta ka helicopter land hota hai. Photo khichwate hain, paani ka tanker background mein, khud SUV mein wapas. Agle din headline: "Vikas yatra continues." Tanker khaali hota hai, lekin handle full hota hai gratitude posts se.</p>
+        <p class="side-body" style="margin-top:8px;">Sugar factory ka loan default hota hai, bank NPA likh deta hai, factory band ho jaati hai — lekin neta ka resort business usi saal khulta hai, usi gaon mein, usi zameen pe. Coincidence ka bhi ek limit hota hai, yahan limit cross ho chuki hai kabhi ka.</p>
+        <div class="article-meta" style="margin-top:8px;">UNSAID: Tanker Khaali, Engagement Full. · @unsaid · 3 min read</div>
+      </div>
+
+      <div class="side-card">
+        <span class="tag tag-green">📋 QUICK FACTS</span>
+        <h3 class="side-hl">Inka Resume, Summarised</h3>
+        <p class="side-body">Qualification: "jan seva." Asli hunar: zameen ka land-use convert karna, phir usi zameen pe trust banana. Career path: baap se beta, bhatija se damaad — verified franchise, no entrance exam required.</p>
+        <div class="article-meta" style="margin-top:8px;">UNSAID: Khaandaani Hunar, Audit-Proof. · @unsaid · 2 min read</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE 1 -->
+  <div class="pull">
+    <blockquote>"PARTY EK GHAR HAI JAHAN KIRAYA NAHI DENA PADTA, SIRF VOTE BANK CARRY KARNA PADTA HAI APNE SAATH — SUITCASE KI TARAH."</blockquote>
+    <cite>— UNSAID · Special Report · 20 June 2026 · Loyalty: rental. Address: flexible.</cite>
+  </div>
+
+  <!-- CONTINUING ARTICLE -->
+  <div class="hero-main" style="border-right:none;padding-right:0;max-width:900px;margin:0 auto;">
+    <h3 class="side-hl" id="infrastructure">Infrastructure Ka Joke</h3>
+    <div class="body-text">
+      <p>Toll naka pe 20 saal se construction "complete hone wala hai." Construction company ka chairman aur local MLA ka beta — coincidence, sirf coincidence. Highway ka ek hissa banta hai, dusra hissa "environmental clearance" mein atka rehta hai exactly utne saal jab tak agla election na aa jaaye.</p>
+      <p>Inaugurations inka favorite sport hai. Pul ka inauguration 4 baar hota hai, pul khud kabhi nahi banta. <strong class="hl">Ribbon-cutting scissors pe zyada budget hai bridge se.</strong> Plaque pe naam itni baar update hota hai ki marble ki ek alag factory chal sakti hai sirf naam-badlai ke liye.</p>
+    </div>
+
+    <h3 class="side-hl" id="ed-cbi" style="margin-top:20px;">ED, CBI, Aur Party-Hopping Circus</h3>
+    <div class="body-text">
+      <p>ED ka chhapa padta hai Monday ko. Wednesday ko wahi neta dusri party join kar leta hai. Thursday ko case "technical reasons" se thanda. Friday tak woh neta naye party ke stage pe khada hoke "bhrashtachar mukt Maharashtra" pe bhashan de raha hota hai. Yeh process itni smooth hai ki IIT wale ise case study bana sakte hain — efficient system management, full marks for execution.</p>
+      <p>Party splits itni baar hue hain ki ab symbol allotment khud ek reality show lagta hai. Ghadi kiski, dhanushya-baan kiska, tutti hui party ka asli wala kaun — yeh sab Election Commission ke office mein decide hota hai, voter ke ghar mein nahi.</p>
+    </div>
+
+    <h3 class="side-hl" id="farmhouse" style="margin-top:20px;">Farmhouse Economy</h3>
+    <div class="body-text">
+      <p>Inki salary public record mein hai, lekin farmhouse Lonavla mein, flat Worli mein, aur foreign trip "study tour" ke naam pe — yeh sab ka source kabhi audit nahi hota. Income Tax department ko bhi pata hai kahan jaake ruk jaana hai.</p>
+      <p>Shaadi function mein jo neta entry leta hai, uska security convoy gaon ki poori sadak block kar deta hai. Ambulance wait karti hai, neta ka convoy nahi rukta. Priority list mein public sabse neeche hai, apni hi state mein.</p>
+    </div>
+
+    <h3 class="side-hl" style="margin-top:20px;">Public Ka Role</h3>
+    <div class="body-text">
+      <p>Aur public? Public sirf rally mein bhid hai. Vote dene tak zaruri, result aane ke baad invisible. WhatsApp forward mein "hamare neta ne kya kiya" wala message ghoomta rehta hai, lekin gaon mein bijli teen ghante hi aati hai, woh bhi load-shedding ke schedule pe depend karta hai jo khud kabhi schedule pe nahi aata.</p>
+      <p>Public hospital mein bed nahi milta, lekin neta ke trust wale private hospital mein VIP suite available hai same building mein. Government scheme ka banner sabse bada hota hai, scheme ka fund sabse chota.</p>
+    </div>
+  </div>
+
+  <!-- STAT STRIP -->
+  <div class="stat-strip">
+    <div class="stat-item">
+      <div class="stat-num">4×</div>
+      <div class="stat-label">Average Inaugurations Per Pul. Bridge Itself: Still Under "Clearance."</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">20 YRS</div>
+      <div class="stat-label">Toll Naka "Almost Complete." Construction Company Chairman's Son: Local MLA.</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Mon→Fri</div>
+      <div class="stat-label">Standard Turnaround From ED Raid To Party-Switch Speech. Case Status: Thanda.</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0</div>
+      <div class="stat-label">Audits Conducted On Farmhouse, Flat &amp; "Study Tour" Income Sources.</div>
+    </div>
+  </div>
+
+  <!-- PULL QUOTE 2 -->
+  <div class="pull">
+    <blockquote>"YEH STATE RUN NAHI HOTI. YEH STATE MANAGE HOTI HAI — JISKE PAAS BIGGER FARMHOUSE, UNKE PAAS BIGGER MIC."</blockquote>
+    <cite>— UNSAID · Special Report · 20 June 2026 · Sequel pe sequel, season pe season, defection pe defection.</cite>
+  </div>
+
+  <!-- CLOSING TRUTH -->
+  <div class="opinion">
+    <div class="op-label">UNSAID</div>
+    <div>
+      <div class="op-hl">INKA ASLI VIKAS SIRF EK JAGAH DIKHTA HAI.</div>
+      <p class="op-body">Aur jab tak public applause dena band nahi karegi, yeh show housefull chalta rahega — sequel pe sequel, season pe season, defection pe defection.</p>
+      <div class="op-author">Unsaid Truth: Inka asli vikas sirf ek jagah dikhta hai — apni property portfolio mein.</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">UN<span>SAID</span></div>
+  <div>© 2026 · Special Report · All Subtext Reserved · Jugaad Journalism™</div>
+  <div>unsaid.wtf · Made in 🇮🇳 with no sleep and genuine concern about everyone's property portfolio</div>
+</footer>
+
+<script>
+const TICKER_ITEMS = [
+  "🏛️ BREAKING: Maharashtra neta switches party for the third time this term. Symbol changed. Loyalty: still rental.",
+  "🎓 Affidavit says 'graduate.' University search returns zero results. Record office reportedly caught fire. Again.",
+  "🚜 Drought relief helicopter lands, photo taken, SUV departs. Tanker remains empty. Gratitude posts remain full.",
+  "🌉 Bridge inaugurated for the fourth time this decade. Bridge itself: still pending 'environmental clearance.'",
+  "🕵️ ED raid on Monday. Party switch on Wednesday. Case 'thanda' by Thursday. Bhashan on Friday. Efficient system.",
+  "🏠 Farmhouse in Lonavla, flat in Worli, 'study tour' abroad — source of income: a question nobody is asking.",
+  "📊 UNSAID DATA: 0 audits conducted on any of the above. Income Tax department knows exactly where to stop.",
+  "🇮🇳 Maharashtra 2026: Same neta, new symbol, same suitcase, same vote bank. Carried over, every single time.",
+];
+
+const all = [...TICKER_ITEMS, ...TICKER_ITEMS];
+document.getElementById('tickerInner').innerHTML = all.map(t => `<span>${t}</span>`).join('');
+
+setTimeout(() => {
+  document.querySelectorAll('.bar-fill').forEach(el => {
+    el.style.width = el.dataset.w;
+  });
+}, 600);
+</script>
+</body>
+</html>
